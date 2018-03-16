@@ -24,7 +24,20 @@ class App extends Component {
             url="https://www.instagram.com/danielsmith4483/"
           />
         </p>
-        <p>Software Engineer with a background in Computer Science.</p>
+
+        <p>
+          Software Engineer with a background in Computer Science. Passionate
+          about JavaScript, React, and weightlifting/fitness. Currently working
+          at the Naval Research Laboratory.
+        </p>
+
+        <h2>Education</h2>
+
+        <h2>Work Experience</h2>
+
+        <h2>Projects</h2>
+
+        <h2>Contact</h2>
       </div>
     );
   }
