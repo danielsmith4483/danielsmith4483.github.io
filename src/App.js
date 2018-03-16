@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import iconGithub from "./Icons/github.svg";
-import iconLinkedin from "./Icons/linkedin.svg";
-import iconInstagram from "./Icons/instagram.svg";
+import SocialLink from "./Components/SocialLink";
 
 class App extends Component {
   render() {
@@ -13,20 +11,17 @@ class App extends Component {
           <h1 className="App-title">Daniel Smith</h1>
         </header>
         <p className="App-intro">
-          <img
-            src={iconGithub}
-            className="App-social-icon"
-            alt="Github social icon"
+          <SocialLink
+            icon="github-alt"
+            url="https://github.com/danielsmith4483"
           />
-          <img
-            src={iconLinkedin}
-            className="App-social-icon"
-            alt="Linkedin social icon"
+          <SocialLink
+            icon="linkedin"
+            url="https://www.linkedin.com/in/danielsmith4483/"
           />
-          <img
-            src={iconInstagram}
-            className="App-social-icon"
-            alt="Instagram social icon"
+          <SocialLink
+            icon="instagram"
+            url="https://www.instagram.com/danielsmith4483/"
           />
         </p>
         <p>Software Engineer with a background in Computer Science.</p>
