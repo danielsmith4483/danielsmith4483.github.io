@@ -1,6 +1,6 @@
 {
-  "name": "website",
-  "short_name": "website",
+  "name": "danielsmith.io",
+  "short_name": "danielsmith",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
