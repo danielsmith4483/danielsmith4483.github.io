@@ -4,10 +4,3 @@
   width: 100%;
   scroll-behavior: smooth;
 }
-
-.card {
-  font-size: 2em;
-  padding: 50px;
-  background-color: #dddddd;
-  height: 1000px;
-}
