@@ -1,14 +1,16 @@
 .card {
-  font-size: 2em;
+  font-size: 1.5em;
   padding: 50px;
   padding-top: 100px;
   margin: 0px;
   color: black;
   min-height: 75vh;
+  font-family: "Open Sans", sans-serif;
 }
 
 .title {
-  font-size: 2em;
+  font-size: 4em;
+  font-family: "Space Mono", monospace;
 }
 
 img.right {
