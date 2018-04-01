@@ -1,11 +1,14 @@
 {
   "private": true,
   "name": "danielsmith.io",
+  "homepage": "https://danielsmith.io",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run -s serve || npm run -s dev",
     "build": "preact build",
+    "copy-cname": "cp ./CNAME ./build/ | true",
+    "deploy": "npm run build && npm run copy-cname && gh-pages -b master -d build",
     "serve": "preact build && preact serve",
     "dev": "preact watch",
     "lint": "eslint src",
