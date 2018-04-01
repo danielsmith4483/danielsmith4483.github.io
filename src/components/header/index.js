@@ -9,16 +9,19 @@ export default class Header extends Component {
         <h1>Daniel Smith</h1>
         <nav>
           <Link activeClassName={style.active} href="/">
-            About Me
+            Bio
           </Link>
-          <Link activeClassName={style.active} href="/#resume">
-            Resume
+          <Link activeClassName={style.active} href="/#work-experience">
+            Work Experience
+          </Link>
+          <Link activeClassName={style.active} href="/#education">
+            Education
           </Link>
           <Link activeClassName={style.active} href="/#projects">
             Projects
           </Link>
-          <Link activeClassName={style.active} href="/#contact">
-            Contact
+          <Link activeClassName={style.active} href="/#contacts">
+            Contacts
           </Link>
         </nav>
       </header>

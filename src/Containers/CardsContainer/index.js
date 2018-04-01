@@ -9,7 +9,11 @@ export default class CardsContainer extends Component {
     return (
       <div>
         {cardData.map(c => {
-          return <Card title={c.title}>{c.contents}</Card>;
+          return (
+            <Card title={c.title} colors={c.colors}>
+              {c.contents}
+            </Card>
+          );
         })}
       </div>
     );
