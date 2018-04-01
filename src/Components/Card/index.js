@@ -7,7 +7,7 @@ export default class Card extends Component {
     if (this.props.colors) {
       style = {
         backgroundImage:
-          `linear-gradient(90deg, ` +
+          `linear-gradient(150deg, ` +
           `${this.props.colors.backgroundStart} 0%, ` +
           `${this.props.colors.backgroundEnd} 100%)`,
         color: this.props.colors.textColor
