@@ -590,6 +590,7 @@ var Card_Card = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       { className: "card", style: style },
+      this.props.imageRight && Object(preact_min["h"])("img", { className: "right", src: this.props.imageRight }),
       Object(preact_min["h"])(
         "div",
         { className: "title" },
@@ -626,6 +627,32 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 
+var colorsBright = {
+  backgroundStart: "#F9FEA5",
+  backgroundEnd: "#20E2D7",
+  textColor: "black"
+};
+
+var colorsDark = {
+  backgroundStart: "#181921",
+  backgroundEnd: "#181921",
+  textColor: "white"
+};
+
+var CardsContainer__ref = Object(preact_min["h"])(
+  Card_Card,
+  {
+    title: "Bio",
+    colors: colorsBright,
+    imageRight: "https://i.imgur.com/Jsy1Zyw.jpg"
+  },
+  Object(preact_min["h"])(
+    "p",
+    null,
+    "Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory."
+  )
+);
+
 var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer__inherits(CardsContainer, _Component);
 
@@ -639,6 +666,7 @@ var CardsContainer_CardsContainer = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       null,
+      CardsContainer__ref,
       cards_default.a.map(function (c) {
         return Object(preact_min["h"])(
           Card_Card,
@@ -1335,7 +1363,7 @@ module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
 /***/ "w03J":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Bio","contents":"Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory.","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Work Experience","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Education","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Projects","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
+module.exports = [{"title":"Work Experience","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Education","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Projects","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
 
 /***/ })
 
