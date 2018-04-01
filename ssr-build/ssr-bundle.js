@@ -458,8 +458,8 @@ Router.Link = Link;
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 // EXTERNAL MODULE: ./style/index.css
-var style = __webpack_require__("rq4c");
-var style_default = /*#__PURE__*/__webpack_require__.n(style);
+var style_0 = __webpack_require__("rq4c");
+var style_default = /*#__PURE__*/__webpack_require__.n(style_0);
 
 // EXTERNAL MODULE: ../node_modules/preact/dist/preact.min.js
 var preact_min = __webpack_require__("KM04");
@@ -515,12 +515,17 @@ var header_Header = function (_Component) {
         Object(preact_min["h"])(
           match["Link"],
           { activeClassName: header_style_default.a.active, href: "/" },
-          "About Me"
+          "Bio"
         ),
         Object(preact_min["h"])(
           match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#resume" },
-          "Resume"
+          { activeClassName: header_style_default.a.active, href: "/#work-experience" },
+          "Work Experience"
+        ),
+        Object(preact_min["h"])(
+          match["Link"],
+          { activeClassName: header_style_default.a.active, href: "/#education" },
+          "Education"
         ),
         Object(preact_min["h"])(
           match["Link"],
@@ -529,8 +534,8 @@ var header_Header = function (_Component) {
         ),
         Object(preact_min["h"])(
           match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#contact" },
-          "Contact"
+          { activeClassName: header_style_default.a.active, href: "/#contacts" },
+          "Contacts"
         )
       )
     );
@@ -574,9 +579,17 @@ var Card_Card = function (_Component) {
   }
 
   Card.prototype.render = function render() {
+    var style = {};
+    if (this.props.colors) {
+      style = {
+        backgroundImage: "linear-gradient(90deg, " + (this.props.colors.backgroundStart + " 0%, ") + (this.props.colors.backgroundEnd + " 100%)"),
+        color: this.props.colors.textColor
+      };
+    }
+
     return Object(preact_min["h"])(
       "div",
-      { className: "card" },
+      { className: "card", style: style },
       Object(preact_min["h"])(
         "div",
         { className: "title" },
@@ -629,7 +642,7 @@ var CardsContainer_CardsContainer = function (_Component) {
       cards_default.a.map(function (c) {
         return Object(preact_min["h"])(
           Card_Card,
-          { title: c.title },
+          { title: c.title, colors: c.colors },
           c.contents
         );
       })
@@ -743,9 +756,9 @@ function home__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 
-var home__ref = Object(preact_min["h"])(LinksContainer_LinksContainer, null);
+var home__ref = Object(preact_min["h"])(CardsContainer_CardsContainer, null);
 
-var home__ref2 = Object(preact_min["h"])(CardsContainer_CardsContainer, null);
+var home__ref2 = Object(preact_min["h"])(LinksContainer_LinksContainer, null);
 
 var home_Home = function (_Component) {
   home__inherits(Home, _Component);
@@ -1322,7 +1335,7 @@ module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
 /***/ "w03J":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Bio","contents":"Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory."},{"title":"Education","contents":""},{"title":"Work Experience","contents":""},{"title":"Projects","contents":""},{"title":"Contact","contents":""}]
+module.exports = [{"title":"Bio","contents":"Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory.","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Work Experience","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Education","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Projects","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
 
 /***/ })
 
