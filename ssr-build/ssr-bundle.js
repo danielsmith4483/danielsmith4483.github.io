@@ -582,7 +582,7 @@ var Card_Card = function (_Component) {
     var style = {};
     if (this.props.colors) {
       style = {
-        backgroundImage: "linear-gradient(90deg, " + (this.props.colors.backgroundStart + " 0%, ") + (this.props.colors.backgroundEnd + " 100%)"),
+        backgroundImage: "linear-gradient(150deg, " + (this.props.colors.backgroundStart + " 0%, ") + (this.props.colors.backgroundEnd + " 100%)"),
         color: this.props.colors.textColor
       };
     }
