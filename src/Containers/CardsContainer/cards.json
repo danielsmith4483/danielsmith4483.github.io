@@ -1,15 +1,5 @@
 [
   {
-    "title": "Bio",
-    "contents":
-      "Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory.",
-    "colors": {
-      "backgroundStart": "#F9FEA5",
-      "backgroundEnd": "#20E2D7",
-      "textColor": "black"
-    }
-  },
-  {
     "title": "Work Experience",
     "contents": "",
     "colors": {

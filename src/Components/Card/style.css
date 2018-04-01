@@ -10,3 +10,8 @@
 .title {
   font-size: 2em;
 }
+
+img.right {
+  height: 50vh;
+  float: right;
+}

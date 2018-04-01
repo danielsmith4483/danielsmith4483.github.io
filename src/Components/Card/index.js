@@ -16,6 +16,10 @@ export default class Card extends Component {
 
     return (
       <div className="card" style={style}>
+        {this.props.imageRight && (
+          <img className="right" src={this.props.imageRight} />
+        )}
+
         <div className="title">{this.props.title}</div>
         <div>
           <div>{this.props.children}</div>
