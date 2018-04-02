@@ -8,15 +8,15 @@ import Card from "../../Components/Card";
 import Project from "../../Components/Project";
 
 const colorsBright = {
-  backgroundStart: "#F9FEA5",
-  backgroundEnd: "#20E2D7",
-  textColor: "black"
+  backgroundStart: "#4c5ad6",
+  backgroundEnd: "#4350cb",
+  textColor: "white"
 };
 
 const colorsDark = {
-  backgroundStart: "#000000",
-  backgroundEnd: "#333333",
-  textColor: "#F9FEA5"
+  backgroundStart: "#cfd9df",
+  backgroundEnd: "#e2ebf0",
+  textColor: "black"
 };
 
 export default class CardsContainer extends Component {

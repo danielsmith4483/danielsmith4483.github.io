@@ -6,7 +6,7 @@ if (typeof window !== "undefined") {
 
   WebFont.load({
     google: {
-      families: ["Space Mono", "Open Sans"]
+      families: ["Raleway", "Open Sans"]
     }
   });
 }
