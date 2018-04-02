@@ -807,6 +807,13 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* Web Font Loader v1.6.28 - (c) Adobe Systems
 
 /***/ }),
 
+/***/ "J4fV":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "JkW7":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -904,6 +911,10 @@ var header_Header = function (_Component) {
 // EXTERNAL MODULE: ./routes/home/style.css
 var home_style = __webpack_require__("ZAL5");
 var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
+
+// EXTERNAL MODULE: ./Containers/CardsContainer/style.css
+var CardsContainer_style = __webpack_require__("J4fV");
+var CardsContainer_style_default = /*#__PURE__*/__webpack_require__.n(CardsContainer_style);
 
 // EXTERNAL MODULE: ./Containers/CardsContainer/cards.json
 var cards = __webpack_require__("w03J");
@@ -1071,6 +1082,7 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 
+
 var colorsBright = {
   backgroundStart: "#F9FEA5",
   backgroundEnd: "#20E2D7",
@@ -1199,7 +1211,7 @@ var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer.prototype.render = function render() {
     return Object(preact_min["h"])(
       "div",
-      null,
+      { className: "cardsContainer" },
       Object(preact_min["h"])(
         Card_Card,
         {
