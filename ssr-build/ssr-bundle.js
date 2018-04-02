@@ -1084,8 +1084,8 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 var colorsBright = {
-  backgroundStart: "#2948ff",
-  backgroundEnd: "#396afc",
+  backgroundStart: "#4c5ad6",
+  backgroundEnd: "#4350cb",
   textColor: "white"
 };
 
