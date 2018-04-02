@@ -909,6 +909,10 @@ var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
 var cards = __webpack_require__("w03J");
 var cards_default = /*#__PURE__*/__webpack_require__.n(cards);
 
+// EXTERNAL MODULE: ./Containers/CardsContainer/projects.json
+var projects = __webpack_require__("KIIH");
+var projects_default = /*#__PURE__*/__webpack_require__.n(projects);
+
 // EXTERNAL MODULE: ./Components/Card/style.css
 var Card_style = __webpack_require__("NAku");
 var Card_style_default = /*#__PURE__*/__webpack_require__.n(Card_style);
@@ -948,7 +952,7 @@ var Card_Card = function (_Component) {
       { className: "card", style: style },
       this.props.imageRight && Object(preact_min["h"])("img", { className: "right", src: this.props.imageRight }),
       Object(preact_min["h"])(
-        "div",
+        "h1",
         { className: "title" },
         this.props.title
       ),
@@ -968,6 +972,88 @@ var Card_Card = function (_Component) {
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./Components/Project/style.css
+var Project_style = __webpack_require__("zuNQ");
+var Project_style_default = /*#__PURE__*/__webpack_require__.n(Project_style);
+
+// CONCATENATED MODULE: ./Components/Project/index.js
+
+
+function Project__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function Project__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function Project__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var Project_Project = function (_Component) {
+  Project__inherits(Project, _Component);
+
+  function Project() {
+    Project__classCallCheck(this, Project);
+
+    return Project__possibleConstructorReturn(this, _Component.apply(this, arguments));
+  }
+
+  Project.prototype.render = function render() {
+    return Object(preact_min["h"])(
+      "div",
+      { className: "project" },
+      Object(preact_min["h"])(
+        "h2",
+        null,
+        this.props.projectData.title
+      ),
+      Object(preact_min["h"])(
+        "p",
+        null,
+        this.props.projectData.description
+      ),
+      Object(preact_min["h"])(
+        "p",
+        null,
+        "\uD83D\uDD17",
+        Object(preact_min["h"])(
+          "a",
+          { href: this.props.projectData.url, target: "_blank" },
+          "Website"
+        )
+      ),
+      Object(preact_min["h"])(
+        "p",
+        null,
+        "\uD83D\uDDCE",
+        Object(preact_min["h"])(
+          "a",
+          { href: this.props.projectData.docs, target: "_blank" },
+          "Docs"
+        )
+      ),
+      Object(preact_min["h"])(
+        "p",
+        null,
+        "\uD83D\uDDC4\uFE0F",
+        Object(preact_min["h"])(
+          "a",
+          { href: this.props.projectData.repository, target: "_blank" },
+          "Repository"
+        )
+      ),
+      Object(preact_min["h"])(
+        "p",
+        null,
+        "\u2602\uFE0FCoverage: ",
+        this.props.projectData.coverage
+      )
+    );
+  };
+
+  return Project;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./Containers/CardsContainer/index.js
 
 
@@ -983,6 +1069,8 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 
+
+
 var colorsBright = {
   backgroundStart: "#F9FEA5",
   backgroundEnd: "#20E2D7",
@@ -990,22 +1078,112 @@ var colorsBright = {
 };
 
 var colorsDark = {
-  backgroundStart: "#181921",
-  backgroundEnd: "#181921",
-  textColor: "white"
+  backgroundStart: "#000000",
+  backgroundEnd: "#333333",
+  textColor: "#F9FEA5"
 };
 
 var CardsContainer__ref = Object(preact_min["h"])(
   Card_Card,
-  {
-    title: "Bio",
-    colors: colorsBright,
-    imageRight: "https://i.imgur.com/Jsy1Zyw.jpg"
-  },
+  { title: "My work", colors: colorsDark },
+  Object(preact_min["h"])(
+    "h2",
+    null,
+    "Naval Research Laboratory"
+  ),
   Object(preact_min["h"])(
     "p",
     null,
-    "Software Engineer with a background in Computer Science. Passionate about JavaScript, React, and weightlifting/fitness. Currently working at the Naval Research Laboratory."
+    Object(preact_min["h"])(
+      "ul",
+      null,
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "todo"
+      )
+    )
+  ),
+  Object(preact_min["h"])(
+    "h2",
+    null,
+    "The University of Southern Mississippi"
+  ),
+  Object(preact_min["h"])(
+    "p",
+    null,
+    Object(preact_min["h"])(
+      "ul",
+      null,
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "Designed and developed a content delivery framework for university department apps using Objective-C."
+      ),
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "Implemented networking libraries for background content updates for mobile apps."
+      ),
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "Created a content management web app using AngularJS."
+      ),
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "Helped manage app testing practices using TestFlight."
+      ),
+      Object(preact_min["h"])(
+        "li",
+        null,
+        "Participated in the delivery of apps to the iTunes App Store."
+      )
+    )
+  )
+);
+
+var CardsContainer__ref2 = Object(preact_min["h"])(
+  Card_Card,
+  { title: "My education", colors: colorsBright },
+  Object(preact_min["h"])(
+    "h2",
+    null,
+    "The University of Southern Mississippi (May 2013 - Aug. 2016)"
+  ),
+  Object(preact_min["h"])(
+    "ul",
+    null,
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Master of Science in Computer Science"
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Bachelor of Science in Computer Science"
+    )
+  ),
+  Object(preact_min["h"])(
+    "h2",
+    null,
+    "Jones County Junior College (Aug. 2011 - May 2013)"
+  ),
+  Object(preact_min["h"])(
+    "ul",
+    null,
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Master of Science in Computer Science"
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Bachelor of Science in Computer Science"
+    )
   )
 );
 
@@ -1022,7 +1200,28 @@ var CardsContainer_CardsContainer = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       null,
+      Object(preact_min["h"])(
+        Card_Card,
+        {
+          title: "Hello!",
+          colors: colorsBright,
+          imageRight: "https://i.imgur.com/Jsy1Zyw.jpg"
+        },
+        Object(preact_min["h"])(
+          "p",
+          null,
+          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and weightlifting. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about ES6 & React, and I dabble in making chat bots and\n            other one-off projects."
+        )
+      ),
       CardsContainer__ref,
+      CardsContainer__ref2,
+      Object(preact_min["h"])(
+        Card_Card,
+        { title: "My projects", colors: colorsDark },
+        projects_default.a.map(function (p) {
+          return Object(preact_min["h"])(Project_Project, { projectData: p });
+        })
+      ),
       cards_default.a.map(function (c) {
         return Object(preact_min["h"])(
           Card_Card,
@@ -1354,6 +1553,13 @@ if (typeof window !== "undefined") {
 }
 
 /* harmony default export */ var index = __webpack_exports__["default"] = (app_App);
+
+/***/ }),
+
+/***/ "KIIH":
+/***/ (function(module, exports) {
+
+module.exports = [{"title":"This website","description":"Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.","url":"#","docs":"","repository":"https://github.com/danielsmith4483/danielsmith4483.github.io","coverage":"0"},{"title":"Barbell Ninja","description":"Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.","url":"https://barbell.ninja","repository":"https://github.com/danielsmith4483/barbell-ninja","coverage":"0"}]
 
 /***/ }),
 
@@ -1729,7 +1935,14 @@ module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
 /***/ "w03J":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Work Experience","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Education","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}},{"title":"Projects","contents":"","colors":{"backgroundStart":"#181921","backgroundEnd":"#181921","textColor":"white"}},{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
+module.exports = [{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
+
+/***/ }),
+
+/***/ "zuNQ":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 
