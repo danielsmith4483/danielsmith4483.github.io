@@ -1090,8 +1090,8 @@ var colorsBright = {
 };
 
 var colorsDark = {
-  backgroundStart: "#cfd9df",
-  backgroundEnd: "#e2ebf0",
+  backgroundStart: "#ffffff",
+  backgroundEnd: "#ffffff",
   textColor: "black"
 };
 
@@ -1104,16 +1104,12 @@ var CardsContainer__ref = Object(preact_min["h"])(
     "Naval Research Laboratory"
   ),
   Object(preact_min["h"])(
-    "p",
+    "ul",
     null,
     Object(preact_min["h"])(
-      "ul",
+      "li",
       null,
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "todo"
-      )
+      "todo"
     )
   ),
   Object(preact_min["h"])(
@@ -1122,36 +1118,32 @@ var CardsContainer__ref = Object(preact_min["h"])(
     "The University of Southern Mississippi"
   ),
   Object(preact_min["h"])(
-    "p",
+    "ul",
     null,
     Object(preact_min["h"])(
-      "ul",
+      "li",
       null,
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "Designed and developed a content delivery framework for university department apps using Objective-C."
-      ),
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "Implemented networking libraries for background content updates for mobile apps."
-      ),
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "Created a content management web app using AngularJS."
-      ),
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "Helped manage app testing practices using TestFlight."
-      ),
-      Object(preact_min["h"])(
-        "li",
-        null,
-        "Participated in the delivery of apps to the iTunes App Store."
-      )
+      "Designed and developed a content delivery framework for university department apps using Objective-C."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Implemented networking libraries for background content updates for mobile apps."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Created a content management web app using AngularJS."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Helped manage app testing practices using TestFlight."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Participated in the delivery of apps to the iTunes App Store."
     )
   )
 );
@@ -1199,6 +1191,8 @@ var CardsContainer__ref2 = Object(preact_min["h"])(
   )
 );
 
+var _ref3 = Object(preact_min["h"])(Card_Card, { title: "Contact", colors: colorsBright });
+
 var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer__inherits(CardsContainer, _Component);
 
@@ -1234,13 +1228,7 @@ var CardsContainer_CardsContainer = function (_Component) {
           return Object(preact_min["h"])(Project_Project, { projectData: p });
         })
       ),
-      cards_default.a.map(function (c) {
-        return Object(preact_min["h"])(
-          Card_Card,
-          { title: c.title, colors: c.colors },
-          c.contents
-        );
-      })
+      _ref3
     );
   };
 
@@ -1505,7 +1493,7 @@ var app__ref = Object(preact_min["h"])(header_Header, null);
 
 var app__ref2 = Object(preact_min["h"])(home_Home, { path: '/' });
 
-var _ref3 = Object(preact_min["h"])(profile_Profile, { path: '/profile/', user: 'me' });
+var app__ref3 = Object(preact_min["h"])(profile_Profile, { path: '/profile/', user: 'me' });
 
 var _ref4 = Object(preact_min["h"])(profile_Profile, { path: '/profile/:user' });
 
@@ -1540,7 +1528,7 @@ var app_App = function (_Component) {
 				preact_router_es["Router"],
 				{ onChange: this.handleRoute },
 				app__ref2,
-				_ref3,
+				app__ref3,
 				_ref4
 			)
 		);
