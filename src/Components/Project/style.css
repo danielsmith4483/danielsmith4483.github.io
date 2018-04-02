@@ -1,16 +1,10 @@
 .project {
-  border: 1px solid #f9fea5;
+  border-top: 0.25rem solid #f9fea5;
   padding: 50px;
 }
 
-.title {
-  font-size: 3em;
-  font-family: "Space Mono", monospace;
-}
-
-img.right {
-  height: 30vh;
-  float: right;
+a {
+  color: #f9fea5;
 }
 
 h1,
