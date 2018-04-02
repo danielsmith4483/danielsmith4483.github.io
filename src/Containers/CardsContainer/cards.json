@@ -1,32 +1,5 @@
 [
   {
-    "title": "Work Experience",
-    "contents": "",
-    "colors": {
-      "backgroundStart": "#181921",
-      "backgroundEnd": "#181921",
-      "textColor": "white"
-    }
-  },
-  {
-    "title": "Education",
-    "contents": "",
-    "colors": {
-      "backgroundStart": "#F9FEA5",
-      "backgroundEnd": "#20E2D7",
-      "textColor": "black"
-    }
-  },
-  {
-    "title": "Projects",
-    "contents": "",
-    "colors": {
-      "backgroundStart": "#181921",
-      "backgroundEnd": "#181921",
-      "textColor": "white"
-    }
-  },
-  {
     "title": "Contact",
     "contents": "",
     "colors": {

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "This website",
+    "description":
+      "Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.",
+    "url": "#",
+    "docs": "",
+    "repository":
+      "https://github.com/danielsmith4483/danielsmith4483.github.io",
+    "coverage": "0"
+  },
+  {
+    "title": "Barbell Ninja",
+    "description":
+      "Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.",
+    "url": "https://barbell.ninja",
+    "repository": "https://github.com/danielsmith4483/barbell-ninja",
+    "coverage": "0"
+  }
+]

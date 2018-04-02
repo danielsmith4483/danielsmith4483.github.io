@@ -1,11 +1,6 @@
-.card {
-  font-size: 1.5em;
+.project {
+  border: 1px solid #f9fea5;
   padding: 50px;
-  padding-top: 100px;
-  margin: 0px;
-  color: black;
-  min-height: 50vh;
-  font-family: "Open Sans", sans-serif;
 }
 
 .title {

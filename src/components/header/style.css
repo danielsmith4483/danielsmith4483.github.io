@@ -4,7 +4,7 @@
   top: 0;
   width: 100%;
   height: 56px;
-  background-image: linear-gradient(90deg, #181921 0%, #181921 100%);
+  background-image: linear-gradient(90deg, #000000 0%, #333333 100%);
   z-index: 50;
 }
 
@@ -15,7 +15,7 @@
   font-size: 24px;
   line-height: 56px;
   font-weight: 400;
-  color: white;
+  color: #f9fea5;
 }
 
 .header nav {
@@ -32,7 +32,7 @@
   text-align: center;
   background: rgba(255, 255, 255, 0);
   text-decoration: none;
-  color: white;
+  color: #f9fea5;
   will-change: background-color;
 }
 

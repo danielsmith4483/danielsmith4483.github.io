@@ -20,7 +20,7 @@ export default class Card extends Component {
           <img className="right" src={this.props.imageRight} />
         )}
 
-        <div className="title">{this.props.title}</div>
+        <h1 className="title">{this.props.title}</h1>
         <div>
           <div>{this.props.children}</div>
         </div>
