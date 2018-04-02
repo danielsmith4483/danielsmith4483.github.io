@@ -1,4 +1,5 @@
 import { h, Component } from "preact";
+import "./style.css";
 
 import cardData from "./cards.json";
 import projectData from "./projects.json";
@@ -21,7 +22,7 @@ const colorsDark = {
 export default class CardsContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="cardsContainer">
         <Card
           title="Hello!"
           colors={colorsBright}

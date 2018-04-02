@@ -3,17 +3,26 @@
   padding: 50px;
 }
 
-a {
+.project a {
   color: #f9fea5;
 }
 
-h1,
-h2,
-ul,
-p {
+.project h1,
+.project h2,
+.project ul,
+.project p {
   margin-left: 100px;
 }
 
-p {
+.project p {
   margin-right: 100px;
+}
+
+@media (max-width: 599px) {
+  .project h1,
+  .project h2,
+  .project ul,
+  .project p {
+    margin-left: 0px;
+  }
 }
