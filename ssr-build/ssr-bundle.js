@@ -1084,15 +1084,15 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 var colorsBright = {
-  backgroundStart: "#F9FEA5",
-  backgroundEnd: "#20E2D7",
-  textColor: "black"
+  backgroundStart: "#2948ff",
+  backgroundEnd: "#396afc",
+  textColor: "white"
 };
 
 var colorsDark = {
-  backgroundStart: "#000000",
-  backgroundEnd: "#333333",
-  textColor: "#F9FEA5"
+  backgroundStart: "#cfd9df",
+  backgroundEnd: "#e2ebf0",
+  textColor: "black"
 };
 
 var CardsContainer__ref = Object(preact_min["h"])(
@@ -1559,7 +1559,7 @@ if (typeof window !== "undefined") {
 
   WebFont.load({
     google: {
-      families: ["Space Mono", "Open Sans"]
+      families: ["Raleway", "Open Sans"]
     }
   });
 }
