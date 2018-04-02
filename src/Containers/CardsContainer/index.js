@@ -14,8 +14,8 @@ const colorsBright = {
 };
 
 const colorsDark = {
-  backgroundStart: "#cfd9df",
-  backgroundEnd: "#e2ebf0",
+  backgroundStart: "#ffffff",
+  backgroundEnd: "#ffffff",
   textColor: "black"
 };
 
@@ -39,30 +39,26 @@ export default class CardsContainer extends Component {
         </Card>
         <Card title="My work" colors={colorsDark}>
           <h2>Naval Research Laboratory</h2>
-          <p>
-            <ul>
-              <li>todo</li>
-            </ul>
-          </p>
+          <ul>
+            <li>todo</li>
+          </ul>
 
           <h2>The University of Southern Mississippi</h2>
-          <p>
-            <ul>
-              <li>
-                Designed and developed a content delivery framework for
-                university department apps using Objective-C.
-              </li>
-              <li>
-                Implemented networking libraries for background content updates
-                for mobile apps.
-              </li>
-              <li>Created a content management web app using AngularJS.</li>
-              <li>Helped manage app testing practices using TestFlight.</li>
-              <li>
-                Participated in the delivery of apps to the iTunes App Store.
-              </li>
-            </ul>
-          </p>
+          <ul>
+            <li>
+              Designed and developed a content delivery framework for university
+              department apps using Objective-C.
+            </li>
+            <li>
+              Implemented networking libraries for background content updates
+              for mobile apps.
+            </li>
+            <li>Created a content management web app using AngularJS.</li>
+            <li>Helped manage app testing practices using TestFlight.</li>
+            <li>
+              Participated in the delivery of apps to the iTunes App Store.
+            </li>
+          </ul>
         </Card>
 
         <Card title="My education" colors={colorsBright}>
@@ -84,13 +80,8 @@ export default class CardsContainer extends Component {
             return <Project projectData={p} />;
           })}
         </Card>
-        {cardData.map(c => {
-          return (
-            <Card title={c.title} colors={c.colors}>
-              {c.contents}
-            </Card>
-          );
-        })}
+
+        <Card title="Contact" colors={colorsBright} />
       </div>
     );
   }

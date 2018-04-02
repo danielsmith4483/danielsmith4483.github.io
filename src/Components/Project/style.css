@@ -1,10 +1,10 @@
 .project {
-  border-top: 0.25rem solid #f9fea5;
+  border-top: 0.25rem solid #4c5ad6;
   padding: 50px;
 }
 
 .project a {
-  color: #f9fea5;
+  color: black;
 }
 
 .project h1,
