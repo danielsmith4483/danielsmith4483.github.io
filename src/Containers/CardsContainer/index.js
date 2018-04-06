@@ -9,7 +9,7 @@ import Project from "../../Components/Project";
 
 const colorsBright = {
   backgroundStart: "#4c5ad6",
-  backgroundEnd: "#4350cb",
+  backgroundEnd: "#4c5ad6",
   textColor: "white"
 };
 
@@ -26,7 +26,6 @@ export default class CardsContainer extends Component {
         <Card
           title="Hello!"
           colors={colorsBright}
-          imageRight="https://i.imgur.com/Jsy1Zyw.jpg"
         >
           <p>
             {`I'm Daniel, a software engineer with a background in Computer

@@ -1,6 +1,37 @@
 .home {
   padding: 0px 0px;
-  min-height: 100%;
+  background-color: #4c5ad6;
   width: 100%;
   scroll-behavior: smooth;
+  height: 150vh;
+  max-height: 100%;
+  overflow-x: hidden;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-perspective-origin: center top;
+          perspective-origin: center top;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.parallax {
+      height: 75vh;
+      background: url("https://i.imgur.com/LG2MYah.jpg");
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center 50px;
+      vertical-align: top;
+      -webkit-transform-origin: center top;
+              transform-origin: center top;
+      -webkit-transform: translateZ(-1px) scale(2);
+              transform: translateZ(-1px) scale(2);
+              background-color: #4c5ad6;
+              margin: -5px;
+}
+
+.contents {
+  min-height: 200vh;
+  background: #4c5ad6;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
