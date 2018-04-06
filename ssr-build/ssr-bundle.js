@@ -451,6 +451,13 @@ Router.Link = Link;
 
 /***/ }),
 
+/***/ "B85+":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "FryP":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -961,7 +968,6 @@ var Card_Card = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       { className: "card", style: style },
-      this.props.imageRight && Object(preact_min["h"])("img", { className: "right", src: this.props.imageRight }),
       Object(preact_min["h"])(
         "h1",
         { className: "title" },
@@ -1084,6 +1090,7 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 var colorsBright = {
+
   backgroundStart: "#519AF7",
   backgroundEnd: "#519AF7",
   textColor: "white"
@@ -1210,8 +1217,7 @@ var CardsContainer_CardsContainer = function (_Component) {
         Card_Card,
         {
           title: "Hello!",
-          colors: colorsBright,
-          imageRight: "https://i.imgur.com/Jsy1Zyw.jpg"
+          colors: colorsBright
         },
         Object(preact_min["h"])(
           "p",
@@ -1324,6 +1330,45 @@ var LinksContainer_LinksContainer = function (_Component) {
 }(preact_min["Component"]);
 
 
+// EXTERNAL MODULE: ./Components/HeroImage/style.css
+var HeroImage_style = __webpack_require__("B85+");
+var HeroImage_style_default = /*#__PURE__*/__webpack_require__.n(HeroImage_style);
+
+// CONCATENATED MODULE: ./Components/HeroImage/index.js
+
+
+function HeroImage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function HeroImage__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function HeroImage__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var HeroImage__ref = Object(preact_min["h"])(
+  "div",
+  { className: "hero" },
+  "test"
+);
+
+var HeroImage = function (_Component) {
+  HeroImage__inherits(HeroImage, _Component);
+
+  function HeroImage() {
+    HeroImage__classCallCheck(this, HeroImage);
+
+    return HeroImage__possibleConstructorReturn(this, _Component.apply(this, arguments));
+  }
+
+  HeroImage.prototype.render = function render() {
+    return HeroImage__ref;
+  };
+
+  return HeroImage;
+}(preact_min["Component"]);
+
+
 // CONCATENATED MODULE: ./routes/home/index.js
 
 
@@ -1332,6 +1377,8 @@ function home__classCallCheck(instance, Constructor) { if (!(instance instanceof
 function home__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function home__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -1356,8 +1403,13 @@ var home_Home = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       { "class": home_style_default.a.home },
-      home__ref,
-      home__ref2
+      Object(preact_min["h"])("div", { "class": home_style_default.a.parallax }),
+      Object(preact_min["h"])(
+        "div",
+        { "class": home_style_default.a.contents },
+        home__ref,
+        home__ref2
+      )
     );
   };
 
@@ -1777,7 +1829,7 @@ module.exports = [{"title":"This website","description":"Built on preact using p
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"profile":"profile__t2Dqz"};
+module.exports = {"profile":"profile__1f25-"};
 
 /***/ }),
 
@@ -1785,7 +1837,7 @@ module.exports = {"profile":"profile__t2Dqz"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"home":"home__MseGd"};
+module.exports = {"home":"home__2Q5nZ","parallax":"parallax__3THOL","contents":"contents__3U50R"};
 
 /***/ }),
 
@@ -1928,7 +1980,7 @@ Match.Link = Link;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
+module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
 
 /***/ }),
 
