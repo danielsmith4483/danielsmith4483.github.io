@@ -8,8 +8,9 @@ import Card from "../../Components/Card";
 import Project from "../../Components/Project";
 
 const colorsBright = {
-  backgroundStart: "#4c5ad6",
-  backgroundEnd: "#4c5ad6",
+
+  backgroundStart: "#519AF7",
+  backgroundEnd: "#519AF7",
   textColor: "white"
 };
 
