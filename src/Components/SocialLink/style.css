@@ -1,3 +1,7 @@
 .socialLink {
   margin: 20px;
 }
+
+.socialLink a {
+  color: white;
+}

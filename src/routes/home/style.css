@@ -1,6 +1,5 @@
 .home {
   padding: 0px 0px;
-  background-color: #3187f6;
   width: 100%;
   scroll-behavior: smooth;
   height: 150vh;
@@ -26,12 +25,11 @@
               transform-origin: center top;
       -webkit-transform: translateZ(-1px) scale(2);
               transform: translateZ(-1px) scale(2);
-              margin: -5px;
+              margin-left: -5px;
 }
 
 .contents {
-  min-height: 200vh;
-  background: #4c5ad6;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
+          background-color: black;
 }
