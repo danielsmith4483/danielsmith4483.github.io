@@ -70,8 +70,7 @@ export default class CardsContainer extends Component {
 
           <h2>Jones County Junior College (Aug. 2011 - May 2013)</h2>
           <ul>
-            <li>Master of Science in Computer Science</li>
-            <li>Bachelor of Science in Computer Science</li>
+            <li>Associate of Applied Science in Information System Technology</li>
           </ul>
         </Card>
 
