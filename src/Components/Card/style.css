@@ -47,11 +47,11 @@
 
   .card h1,
   h2 {
-    font-size: 1em;
+    font-size: 0.75em;
   }
 
   .card ul,
   p {
-    font-size: 1em;
+    font-size: 0.6em;
   }
 }

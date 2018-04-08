@@ -18,11 +18,19 @@
   margin-right: 100px;
 }
 
-@media (max-width: 599px) {
+@media (max-width: 680px) {
+  .project {
+    padding: 0px;
+  }
+
   .project h1,
   .project h2,
   .project ul,
   .project p {
     margin-left: 0px;
+  }
+
+  .project p {
+    font-size: 0.6em;
   }
 }
