@@ -1090,6 +1090,7 @@ function CardsContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 var colorsBright = {
+
   backgroundStart: "#519AF7",
   backgroundEnd: "#519AF7",
   textColor: "white"
@@ -1187,7 +1188,12 @@ var CardsContainer__ref2 = Object(preact_min["h"])(
     Object(preact_min["h"])(
       "li",
       null,
-      "Associate of Applied Science in Information System Technology"
+      "Master of Science in Computer Science"
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Bachelor of Science in Computer Science"
     )
   )
 );
@@ -1340,24 +1346,23 @@ function HeroImage__inherits(subClass, superClass) { if (typeof superClass !== "
 
 
 
-var HeroImage_HeroImage = function (_Component) {
+var HeroImage__ref = Object(preact_min["h"])(
+  "div",
+  { className: "hero" },
+  "test"
+);
+
+var HeroImage = function (_Component) {
   HeroImage__inherits(HeroImage, _Component);
 
-  function HeroImage(props) {
+  function HeroImage() {
     HeroImage__classCallCheck(this, HeroImage);
 
-    var _this = HeroImage__possibleConstructorReturn(this, _Component.call(this, props));
-
-    _this.state = {};
-    return _this;
+    return HeroImage__possibleConstructorReturn(this, _Component.apply(this, arguments));
   }
 
   HeroImage.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "div",
-      { className: "hero" },
-      this.props.children
-    );
+    return HeroImage__ref;
   };
 
   return HeroImage;
@@ -1398,11 +1403,7 @@ var home_Home = function (_Component) {
     return Object(preact_min["h"])(
       "div",
       { "class": home_style_default.a.home },
-      Object(preact_min["h"])(
-        HeroImage_HeroImage,
-        null,
-        Object(preact_min["h"])("div", { "class": home_style_default.a.parallax })
-      ),
+      Object(preact_min["h"])("div", { "class": home_style_default.a.parallax }),
       Object(preact_min["h"])(
         "div",
         { "class": home_style_default.a.contents },
