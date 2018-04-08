@@ -1188,12 +1188,7 @@ var CardsContainer__ref2 = Object(preact_min["h"])(
     Object(preact_min["h"])(
       "li",
       null,
-      "Master of Science in Computer Science"
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Bachelor of Science in Computer Science"
+      "Associate of Applied Science in Information System Technology"
     )
   )
 );
