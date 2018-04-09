@@ -45,6 +45,7 @@ export default class CardsContainer extends Component {
           <h2>Strong points:</h2>
           <ul>
             <li>C++ (particularly with Qt)</li>
+            <li>Objective-C</li>
             <li>ES6+</li>
             <li>React</li>
           </ul>
@@ -62,7 +63,7 @@ export default class CardsContainer extends Component {
           <ul>
             <li>Developing client applications using Qt C++.</li>
             <li>Implementing Java-based microservices to support said applications.</li>
-            <li>Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups.</li>
+            <li>Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups.</li>
           </ul>
 
           <h2>The University of Southern Mississippi</h2>
