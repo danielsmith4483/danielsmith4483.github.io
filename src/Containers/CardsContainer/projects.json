@@ -13,6 +13,7 @@
     "title": "Barbell Ninja",
     "description":
       "Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.",
+    "docs": "",
     "url": "https://barbell.ninja",
     "repository": "https://github.com/danielsmith4483/barbell-ninja",
     "coverage": "0"

@@ -33,14 +33,30 @@ export default class CardsContainer extends Component {
             Science. I'm passionate about delivering a good user experience,
             optimization, and weightlifting. I currently work at the Stennis
             Space Center for the Naval Research Laboratory. I love learning
-            everything I can about ES6 & React, and I dabble in making chat bots and
-            other one-off projects.`}
+            everything I can about computer science and the various technologies at my disposal, like ES6 and React.`}
           </p>
+
+          <h2>Strong points:</h2>
+          <ul>
+            <li>C++ (particularly with Qt)</li>
+            <li>ES6+</li>
+            <li>React</li>
+          </ul>
+
+          <h2>Other technologies, stacks, languages:</h2>
+          <ul>
+            <li>Python, Ruby, Java, C#</li>
+            <li>Docker, various PaaS solutions</li>
+            <li>MySQL</li>
+
+          </ul>
         </Card>
         <Card title="My work" colors={colorsDark}>
           <h2>Naval Research Laboratory</h2>
           <ul>
-            <li>todo</li>
+            <li>Developing client applications using Qt C++.</li>
+            <li>Implementing Java-based microservices to support said applications.</li>
+            <li>Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups.</li>
           </ul>
 
           <h2>The University of Southern Mississippi</h2>
@@ -64,13 +80,13 @@ export default class CardsContainer extends Component {
         <Card title="My education" colors={colorsBright}>
           <h2>The University of Southern Mississippi (May 2013 - Aug. 2016)</h2>
           <ul>
-            <li>Master of Science in Computer Science</li>
-            <li>Bachelor of Science in Computer Science</li>
+            <li><strong>Master of Science</strong> in Computer Science</li>
+            <li><strong>Bachelor of Science</strong> in Computer Science</li>
           </ul>
 
           <h2>Jones County Junior College (Aug. 2011 - May 2013)</h2>
           <ul>
-            <li>Associate of Applied Science in Information System Technology</li>
+            <li><strong>Associate of Applied Science</strong> in Information System Technology</li>
           </ul>
         </Card>
 
