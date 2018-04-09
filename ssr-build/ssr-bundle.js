@@ -1162,6 +1162,11 @@ var _ref2 = Object(preact_min["h"])(
   Object(preact_min["h"])(
     "li",
     null,
+    "Objective-C"
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
     "ES6+"
   ),
   Object(preact_min["h"])(
@@ -1219,7 +1224,7 @@ var _ref6 = Object(preact_min["h"])(
   Object(preact_min["h"])(
     "li",
     null,
-    "Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups."
+    "Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups."
   )
 );
 
