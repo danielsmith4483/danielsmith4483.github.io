@@ -859,7 +859,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var header__ref = Object(preact_min["h"])(
+var _ref = Object(preact_min["h"])(
   "h1",
   null,
   "Daniel Smith"
@@ -878,7 +878,7 @@ var header_Header = function (_Component) {
     return Object(preact_min["h"])(
       "header",
       { "class": header_style_default.a.header },
-      header__ref,
+      _ref,
       Object(preact_min["h"])(
         "nav",
         null,
@@ -1103,6 +1103,58 @@ var colorsDark = {
 };
 
 var CardsContainer__ref = Object(preact_min["h"])(
+  "h2",
+  null,
+  "Strong points:"
+);
+
+var _ref2 = Object(preact_min["h"])(
+  "ul",
+  null,
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "C++ (particularly with Qt)"
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "ES6+"
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "React"
+  )
+);
+
+var _ref3 = Object(preact_min["h"])(
+  "h2",
+  null,
+  "Other technologies, stacks, languages:"
+);
+
+var _ref4 = Object(preact_min["h"])(
+  "ul",
+  null,
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Python, Ruby, Java, C#"
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Docker, various PaaS solutions"
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "MySQL"
+  )
+);
+
+var _ref5 = Object(preact_min["h"])(
   Card_Card,
   { title: "My work", colors: colorsDark },
   Object(preact_min["h"])(
@@ -1116,7 +1168,17 @@ var CardsContainer__ref = Object(preact_min["h"])(
     Object(preact_min["h"])(
       "li",
       null,
-      "todo"
+      "Developing client applications using Qt C++."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Implementing Java-based microservices to support said applications."
+    ),
+    Object(preact_min["h"])(
+      "li",
+      null,
+      "Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups."
     )
   ),
   Object(preact_min["h"])(
@@ -1155,7 +1217,7 @@ var CardsContainer__ref = Object(preact_min["h"])(
   )
 );
 
-var CardsContainer__ref2 = Object(preact_min["h"])(
+var _ref6 = Object(preact_min["h"])(
   Card_Card,
   { title: "My education", colors: colorsBright },
   Object(preact_min["h"])(
@@ -1169,12 +1231,22 @@ var CardsContainer__ref2 = Object(preact_min["h"])(
     Object(preact_min["h"])(
       "li",
       null,
-      "Master of Science in Computer Science"
+      Object(preact_min["h"])(
+        "strong",
+        null,
+        "Master of Science"
+      ),
+      " in Computer Science"
     ),
     Object(preact_min["h"])(
       "li",
       null,
-      "Bachelor of Science in Computer Science"
+      Object(preact_min["h"])(
+        "strong",
+        null,
+        "Bachelor of Science"
+      ),
+      " in Computer Science"
     )
   ),
   Object(preact_min["h"])(
@@ -1188,12 +1260,17 @@ var CardsContainer__ref2 = Object(preact_min["h"])(
     Object(preact_min["h"])(
       "li",
       null,
-      "Associate of Applied Science in Information System Technology"
+      Object(preact_min["h"])(
+        "strong",
+        null,
+        "Associate of Applied Science"
+      ),
+      " in Information System Technology"
     )
   )
 );
 
-var _ref3 = Object(preact_min["h"])(Card_Card, { title: "Contact", colors: colorsBright });
+var _ref7 = Object(preact_min["h"])(Card_Card, { title: "Contact", colors: colorsBright });
 
 var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer__inherits(CardsContainer, _Component);
@@ -1217,11 +1294,15 @@ var CardsContainer_CardsContainer = function (_Component) {
         Object(preact_min["h"])(
           "p",
           null,
-          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and weightlifting. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about ES6 & React, and I dabble in making chat bots and\n            other one-off projects."
-        )
+          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and weightlifting. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React."
+        ),
+        CardsContainer__ref,
+        _ref2,
+        _ref3,
+        _ref4
       ),
-      CardsContainer__ref,
-      CardsContainer__ref2,
+      _ref5,
+      _ref6,
       Object(preact_min["h"])(
         Card_Card,
         { title: "My projects", colors: colorsDark },
@@ -1229,7 +1310,7 @@ var CardsContainer_CardsContainer = function (_Component) {
           return Object(preact_min["h"])(Project_Project, { projectData: p });
         })
       ),
-      _ref3
+      _ref7
     );
   };
 
@@ -1412,108 +1493,6 @@ var home_Home = function (_Component) {
 }(preact_min["Component"]);
 
 
-// EXTERNAL MODULE: ./routes/profile/style.css
-var profile_style = __webpack_require__("Tv6c");
-var profile_style_default = /*#__PURE__*/__webpack_require__.n(profile_style);
-
-// CONCATENATED MODULE: ./routes/profile/index.js
-
-
-function profile__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function profile__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function profile__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var profile_Profile = function (_Component) {
-	profile__inherits(Profile, _Component);
-
-	function Profile() {
-		var _temp, _this, _ret;
-
-		profile__classCallCheck(this, Profile);
-
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-
-		return _ret = (_temp = (_this = profile__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.state = {
-			time: Date.now(),
-			count: 10
-		}, _this.updateTime = function () {
-			_this.setState({ time: Date.now() });
-		}, _this.increment = function () {
-			_this.setState({ count: _this.state.count + 1 });
-		}, _temp), profile__possibleConstructorReturn(_this, _ret);
-	}
-
-	// gets called when this route is navigated to
-	Profile.prototype.componentDidMount = function componentDidMount() {
-		// start a timer for the clock:
-		this.timer = setInterval(this.updateTime, 1000);
-	};
-
-	// gets called just before navigating away from the route
-
-
-	Profile.prototype.componentWillUnmount = function componentWillUnmount() {
-		clearInterval(this.timer);
-	};
-
-	// update the current time
-
-
-	// Note: `user` comes from the URL, courtesy of our router
-	Profile.prototype.render = function render(_ref, _ref2) {
-		var user = _ref.user;
-		var time = _ref2.time,
-		    count = _ref2.count;
-
-		return Object(preact_min["h"])(
-			'div',
-			{ 'class': profile_style_default.a.profile },
-			Object(preact_min["h"])(
-				'h1',
-				null,
-				'Profile: ',
-				user
-			),
-			Object(preact_min["h"])(
-				'p',
-				null,
-				'This is the user profile for a user named ',
-				user,
-				'.'
-			),
-			Object(preact_min["h"])(
-				'div',
-				null,
-				'Current time: ',
-				new Date(time).toLocaleString()
-			),
-			Object(preact_min["h"])(
-				'p',
-				null,
-				Object(preact_min["h"])(
-					'button',
-					{ onClick: this.increment },
-					'Click Me'
-				),
-				' ',
-				'Clicked ',
-				count,
-				' times.'
-			)
-		);
-	};
-
-	return Profile;
-}(preact_min["Component"]);
-
-
 // CONCATENATED MODULE: ./components/app.js
 
 
@@ -1522,7 +1501,6 @@ function app__classCallCheck(instance, Constructor) { if (!(instance instanceof 
 function app__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function app__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 
 
 
@@ -1539,10 +1517,6 @@ if (false) {
 var app__ref = Object(preact_min["h"])(header_Header, null);
 
 var app__ref2 = Object(preact_min["h"])(home_Home, { path: '/' });
-
-var app__ref3 = Object(preact_min["h"])(profile_Profile, { path: '/profile/', user: 'me' });
-
-var _ref4 = Object(preact_min["h"])(profile_Profile, { path: '/profile/:user' });
 
 var app_App = function (_Component) {
 	app__inherits(App, _Component);
@@ -1574,9 +1548,7 @@ var app_App = function (_Component) {
 			Object(preact_min["h"])(
 				preact_router_es["Router"],
 				{ onChange: this.handleRoute },
-				app__ref2,
-				app__ref3,
-				_ref4
+				app__ref2
 			)
 		);
 	};
@@ -1606,7 +1578,7 @@ if (typeof window !== "undefined") {
 /***/ "KIIH":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"This website","description":"Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.","url":"#","docs":"","repository":"https://github.com/danielsmith4483/danielsmith4483.github.io","coverage":"0"},{"title":"Barbell Ninja","description":"Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.","url":"https://barbell.ninja","repository":"https://github.com/danielsmith4483/barbell-ninja","coverage":"0"}]
+module.exports = [{"title":"This website","description":"Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.","url":"#","docs":"","repository":"https://github.com/danielsmith4483/danielsmith4483.github.io","coverage":"0"},{"title":"Barbell Ninja","description":"Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.","docs":"","url":"https://barbell.ninja","repository":"https://github.com/danielsmith4483/barbell-ninja","coverage":"0"}]
 
 /***/ }),
 
@@ -1817,14 +1789,6 @@ module.exports = [{"title":"This website","description":"Built on preact using p
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "Tv6c":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"profile":"profile__1f25-"};
 
 /***/ }),
 
