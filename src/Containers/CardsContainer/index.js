@@ -23,6 +23,10 @@ const colorsDark = {
 };
 
 export default class CardsContainer extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="cardsContainer">
@@ -33,7 +37,7 @@ export default class CardsContainer extends Component {
           <p>
             {`I'm Daniel, a software engineer with a background in Computer
             Science. I'm passionate about delivering a good user experience,
-            optimization, and weightlifting. I currently work at the Stennis
+            optimization, and web development. I currently work at the Stennis
             Space Center for the Naval Research Laboratory. I love learning
             everything I can about computer science and the various technologies at my disposal, like ES6 and React.`}
           </p>
@@ -53,7 +57,7 @@ export default class CardsContainer extends Component {
 
           </ul>
         </Card>
-        <Card title="My work" colors={colorsDark}>
+        <Card title="My work" colors={colorsDark} ref={this.workRef}>
           <h2>Naval Research Laboratory</h2>
           <ul>
             <li>Developing client applications using Qt C++.</li>
