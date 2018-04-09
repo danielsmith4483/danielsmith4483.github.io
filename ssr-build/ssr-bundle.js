@@ -1031,7 +1031,6 @@ var Project_Project = function (_Component) {
       Object(preact_min["h"])(
         "p",
         null,
-        "\uD83D\uDD17",
         Object(preact_min["h"])(
           "a",
           { href: this.props.projectData.url, target: "_blank" },
@@ -1041,33 +1040,104 @@ var Project_Project = function (_Component) {
       Object(preact_min["h"])(
         "p",
         null,
-        "\uD83D\uDDCE",
-        Object(preact_min["h"])(
-          "a",
-          { href: this.props.projectData.docs, target: "_blank" },
-          "Docs"
-        )
-      ),
-      Object(preact_min["h"])(
-        "p",
-        null,
-        "\uD83D\uDDC4\uFE0F",
         Object(preact_min["h"])(
           "a",
           { href: this.props.projectData.repository, target: "_blank" },
           "Repository"
         )
-      ),
-      Object(preact_min["h"])(
-        "p",
-        null,
-        "\u2602\uFE0FCoverage: ",
-        this.props.projectData.coverage
       )
     );
   };
 
   return Project;
+}(preact_min["Component"]);
+
+
+// EXTERNAL MODULE: ./Containers/LinksContainer/style.css
+var LinksContainer_style = __webpack_require__("hMec");
+var LinksContainer_style_default = /*#__PURE__*/__webpack_require__.n(LinksContainer_style);
+
+// EXTERNAL MODULE: ./Containers/LinksContainer/links.json
+var links = __webpack_require__("bmMN");
+var links_default = /*#__PURE__*/__webpack_require__.n(links);
+
+// EXTERNAL MODULE: ./Components/SocialLink/style.css
+var SocialLink_style = __webpack_require__("adLa");
+var SocialLink_style_default = /*#__PURE__*/__webpack_require__.n(SocialLink_style);
+
+// CONCATENATED MODULE: ./Components/SocialLink/index.js
+
+
+function SocialLink__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function SocialLink__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function SocialLink__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var SocialLink_SocialLink = function (_Component) {
+  SocialLink__inherits(SocialLink, _Component);
+
+  function SocialLink() {
+    SocialLink__classCallCheck(this, SocialLink);
+
+    return SocialLink__possibleConstructorReturn(this, _Component.apply(this, arguments));
+  }
+
+  SocialLink.prototype.render = function render() {
+    return Object(preact_min["h"])(
+      "span",
+      { className: "socialLink" },
+      Object(preact_min["h"])(
+        "a",
+        { href: this.props.url, target: "_blank" },
+        this.props.title
+      )
+    );
+  };
+
+  return SocialLink;
+}(preact_min["Component"]);
+
+
+// CONCATENATED MODULE: ./Containers/LinksContainer/index.js
+
+
+function LinksContainer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function LinksContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function LinksContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+var LinksContainer_LinksContainer = function (_Component) {
+  LinksContainer__inherits(LinksContainer, _Component);
+
+  function LinksContainer() {
+    LinksContainer__classCallCheck(this, LinksContainer);
+
+    return LinksContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
+  }
+
+  LinksContainer.prototype.render = function render() {
+    return Object(preact_min["h"])(
+      "div",
+      { className: "linksContainer" },
+      links_default.a.map(function (l) {
+        return Object(preact_min["h"])(SocialLink_SocialLink, { url: l.url, title: l.title });
+      })
+    );
+  };
+
+  return LinksContainer;
 }(preact_min["Component"]);
 
 
@@ -1079,6 +1149,8 @@ function CardsContainer__classCallCheck(instance, Constructor) { if (!(instance 
 function CardsContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function CardsContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -1270,7 +1342,20 @@ var _ref6 = Object(preact_min["h"])(
   )
 );
 
-var _ref7 = Object(preact_min["h"])(Card_Card, { title: "Contact", colors: colorsBright });
+var _ref7 = Object(preact_min["h"])(
+  Card_Card,
+  { title: "Contact", colors: colorsBright },
+  Object(preact_min["h"])(
+    "p",
+    null,
+    "Please contact me by email at daniel@danielsmith.io."
+  ),
+  Object(preact_min["h"])(
+    "p",
+    null,
+    "Alternatively, you can contact me using any of the platforms listed below."
+  )
+);
 
 var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer__inherits(CardsContainer, _Component);
@@ -1315,94 +1400,6 @@ var CardsContainer_CardsContainer = function (_Component) {
   };
 
   return CardsContainer;
-}(preact_min["Component"]);
-
-
-// EXTERNAL MODULE: ./Containers/LinksContainer/style.css
-var LinksContainer_style = __webpack_require__("hMec");
-var LinksContainer_style_default = /*#__PURE__*/__webpack_require__.n(LinksContainer_style);
-
-// EXTERNAL MODULE: ./Containers/LinksContainer/links.json
-var links = __webpack_require__("bmMN");
-var links_default = /*#__PURE__*/__webpack_require__.n(links);
-
-// EXTERNAL MODULE: ./Components/SocialLink/style.css
-var SocialLink_style = __webpack_require__("adLa");
-var SocialLink_style_default = /*#__PURE__*/__webpack_require__.n(SocialLink_style);
-
-// CONCATENATED MODULE: ./Components/SocialLink/index.js
-
-
-function SocialLink__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function SocialLink__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function SocialLink__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var SocialLink_SocialLink = function (_Component) {
-  SocialLink__inherits(SocialLink, _Component);
-
-  function SocialLink() {
-    SocialLink__classCallCheck(this, SocialLink);
-
-    return SocialLink__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
-
-  SocialLink.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "span",
-      { className: "socialLink" },
-      Object(preact_min["h"])(
-        "a",
-        { href: this.props.url, target: "_blank" },
-        this.props.title
-      )
-    );
-  };
-
-  return SocialLink;
-}(preact_min["Component"]);
-
-
-// CONCATENATED MODULE: ./Containers/LinksContainer/index.js
-
-
-function LinksContainer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function LinksContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function LinksContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-
-var LinksContainer_LinksContainer = function (_Component) {
-  LinksContainer__inherits(LinksContainer, _Component);
-
-  function LinksContainer() {
-    LinksContainer__classCallCheck(this, LinksContainer);
-
-    return LinksContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
-
-  LinksContainer.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "div",
-      { className: "linksContainer" },
-      links_default.a.map(function (l) {
-        return Object(preact_min["h"])(SocialLink_SocialLink, { url: l.url, title: l.title });
-      })
-    );
-  };
-
-  return LinksContainer;
 }(preact_min["Component"]);
 
 
@@ -1483,9 +1480,9 @@ var home_Home = function (_Component) {
       Object(preact_min["h"])(
         "div",
         { "class": home_style_default.a.contents },
-        home__ref,
-        home__ref2
-      )
+        home__ref
+      ),
+      home__ref2
     );
   };
 
