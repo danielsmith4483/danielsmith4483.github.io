@@ -878,36 +878,7 @@ var header_Header = function (_Component) {
     return Object(preact_min["h"])(
       "header",
       { "class": header_style_default.a.header },
-      _ref,
-      Object(preact_min["h"])(
-        "nav",
-        null,
-        Object(preact_min["h"])(
-          match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/" },
-          "Bio"
-        ),
-        Object(preact_min["h"])(
-          match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#work-experience" },
-          "Work Experience"
-        ),
-        Object(preact_min["h"])(
-          match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#education" },
-          "Education"
-        ),
-        Object(preact_min["h"])(
-          match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#projects" },
-          "Projects"
-        ),
-        Object(preact_min["h"])(
-          match["Link"],
-          { activeClassName: header_style_default.a.active, href: "/#contacts" },
-          "Contacts"
-        )
-      )
+      _ref
     );
   };
 
@@ -1227,69 +1198,68 @@ var _ref4 = Object(preact_min["h"])(
 );
 
 var _ref5 = Object(preact_min["h"])(
-  Card_Card,
-  { title: "My work", colors: colorsDark },
-  Object(preact_min["h"])(
-    "h2",
-    null,
-    "Naval Research Laboratory"
-  ),
-  Object(preact_min["h"])(
-    "ul",
-    null,
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Developing client applications using Qt C++."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Implementing Java-based microservices to support said applications."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups."
-    )
-  ),
-  Object(preact_min["h"])(
-    "h2",
-    null,
-    "The University of Southern Mississippi"
-  ),
-  Object(preact_min["h"])(
-    "ul",
-    null,
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Designed and developed a content delivery framework for university department apps using Objective-C."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Implemented networking libraries for background content updates for mobile apps."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Created a content management web app using AngularJS."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Helped manage app testing practices using TestFlight."
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      "Participated in the delivery of apps to the iTunes App Store."
-    )
-  )
+  "h2",
+  null,
+  "Naval Research Laboratory"
 );
 
 var _ref6 = Object(preact_min["h"])(
+  "ul",
+  null,
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Developing client applications using Qt C++."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Implementing Java-based microservices to support said applications."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Participating in daily scrum activites including backlog grooming, sprint planning, and daily standups."
+  )
+);
+
+var _ref7 = Object(preact_min["h"])(
+  "h2",
+  null,
+  "The University of Southern Mississippi"
+);
+
+var _ref8 = Object(preact_min["h"])(
+  "ul",
+  null,
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Designed and developed a content delivery framework for university department apps using Objective-C."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Implemented networking libraries for background content updates for mobile apps."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Created a content management web app using AngularJS."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Helped manage app testing practices using TestFlight."
+  ),
+  Object(preact_min["h"])(
+    "li",
+    null,
+    "Participated in the delivery of apps to the iTunes App Store."
+  )
+);
+
+var _ref9 = Object(preact_min["h"])(
   Card_Card,
   { title: "My education", colors: colorsBright },
   Object(preact_min["h"])(
@@ -1342,7 +1312,7 @@ var _ref6 = Object(preact_min["h"])(
   )
 );
 
-var _ref7 = Object(preact_min["h"])(
+var _ref10 = Object(preact_min["h"])(
   Card_Card,
   { title: "Contact", colors: colorsBright },
   Object(preact_min["h"])(
@@ -1360,10 +1330,10 @@ var _ref7 = Object(preact_min["h"])(
 var CardsContainer_CardsContainer = function (_Component) {
   CardsContainer__inherits(CardsContainer, _Component);
 
-  function CardsContainer() {
+  function CardsContainer(props) {
     CardsContainer__classCallCheck(this, CardsContainer);
 
-    return CardsContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    return CardsContainer__possibleConstructorReturn(this, _Component.call(this, props));
   }
 
   CardsContainer.prototype.render = function render() {
@@ -1379,15 +1349,22 @@ var CardsContainer_CardsContainer = function (_Component) {
         Object(preact_min["h"])(
           "p",
           null,
-          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and weightlifting. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React."
+          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and web development. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React."
         ),
         CardsContainer__ref,
         _ref2,
         _ref3,
         _ref4
       ),
-      _ref5,
-      _ref6,
+      Object(preact_min["h"])(
+        Card_Card,
+        { title: "My work", colors: colorsDark, ref: this.workRef },
+        _ref5,
+        _ref6,
+        _ref7,
+        _ref8
+      ),
+      _ref9,
       Object(preact_min["h"])(
         Card_Card,
         { title: "My projects", colors: colorsDark },
@@ -1395,7 +1372,7 @@ var CardsContainer_CardsContainer = function (_Component) {
           return Object(preact_min["h"])(Project_Project, { projectData: p });
         })
       ),
-      _ref7
+      _ref10
     );
   };
 
@@ -1528,6 +1505,8 @@ var app_App = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.handleRoute = function (e) {
+			console.log(e);
+
 			_this.currentUrl = e.url;
 		}, _temp), app__possibleConstructorReturn(_this, _ret);
 	}
