@@ -14,8 +14,8 @@ export default class Home extends Component {
         </div>
         <div class={style.contents}>
           <CardsContainer />
-          <LinksContainer />
         </div>
+        <LinksContainer />
       </div>
     );
   }

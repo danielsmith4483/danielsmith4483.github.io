@@ -7,6 +7,8 @@ import projectData from "./projects.json";
 import Card from "../../Components/Card";
 import Project from "../../Components/Project";
 
+import LinksContainer from "../../Containers/LinksContainer";
+
 const colorsBright = {
 
   backgroundStart: "#519AF7",
@@ -96,7 +98,11 @@ export default class CardsContainer extends Component {
           })}
         </Card>
 
-        <Card title="Contact" colors={colorsBright} />
+        <Card title="Contact" colors={colorsBright}>
+          <p>Please contact me by email at daniel@danielsmith.io.</p>
+
+          <p>Alternatively, you can contact me using any of the platforms listed below.</p>
+        </Card>
       </div>
     );
   }
