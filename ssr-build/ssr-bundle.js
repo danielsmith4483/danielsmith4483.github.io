@@ -1559,7 +1559,7 @@ if (typeof window !== "undefined") {
 /***/ "KIIH":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"This website","description":"Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.","url":"#","docs":"","repository":"https://github.com/danielsmith4483/danielsmith4483.github.io","coverage":"0"},{"title":"Barbell Ninja","description":"Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.","docs":"","url":"https://barbell.ninja","repository":"https://github.com/danielsmith4483/barbell-ninja","coverage":"0"}]
+module.exports = [{"title":"This website","description":"Built on preact using preact-cli. Optimized for first meaningful paint and time to interactive. Hosted on Github Pages with SSL protection through Cloudflare.","url":"#","docs":"","repository":"https://github.com/danielsmith4483/danielsmith4483.github.io","coverage":"0"},{"title":"Barbell Ninja","description":"Progressive Web App to help optimize barbell plate unracking/reracking in a gym setting.","docs":"","url":"https://barbell.ninja","repository":"https://github.com/danielsmith4483/barbell-ninja","coverage":"0"},{"title":"rep-max","description":"A Node.js module that performs rep max calculations. Written in TypeScript, 100% coverage. Dependency for barbell.ninja.","docs":"","url":"https://www.npmjs.com/package/rep-max","repository":"https://github.com/danielsmith4483/rep-max","coverage":"0"}]
 
 /***/ }),
 
