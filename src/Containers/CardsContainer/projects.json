@@ -17,5 +17,14 @@
     "url": "https://barbell.ninja",
     "repository": "https://github.com/danielsmith4483/barbell-ninja",
     "coverage": "0"
+  },
+  {
+    "title": "rep-max",
+    "description":
+      "A Node.js module that performs rep max calculations. Written in TypeScript, 100% coverage. Dependency for barbell.ninja.",
+    "docs": "",
+    "url": "https://www.npmjs.com/package/rep-max",
+    "repository": "https://github.com/danielsmith4483/rep-max",
+    "coverage": "0"
   }
 ]
