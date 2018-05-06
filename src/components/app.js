@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
+import Helmet from 'preact-helmet';
 
 import Header from './header';
 import Home from '../routes/home';
@@ -11,6 +12,7 @@ if (module.hot) {
 }
 
 export default class App extends Component {
+
 	/** Gets fired when the route changes.
 	 *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
 	 *	@param {string} event.url	The newly routed URL
@@ -24,6 +26,15 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id="app">
+				<Helmet
+					title="Daniel Smith"
+					meta={[
+						{ name: 'description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' },
+						{ property: 'og:type', content: 'article' },
+						{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
+						{ name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }
+					]}
+				/>
 				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
