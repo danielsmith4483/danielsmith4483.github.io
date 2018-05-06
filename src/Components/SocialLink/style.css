@@ -6,3 +6,13 @@
   color: black;
   font-size: 2em;
 }
+
+@media (max-width: 680px) {
+  .socialLink {
+    margin: 5px;
+  }
+  
+  .socialLink a {
+    font-size: 1em;
+  }
+}
