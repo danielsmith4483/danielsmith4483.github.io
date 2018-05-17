@@ -1,2 +1,5 @@
-.cardsContainer {
+.cardsContainer a {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
 }
