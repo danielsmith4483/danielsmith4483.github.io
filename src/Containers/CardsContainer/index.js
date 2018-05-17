@@ -35,7 +35,7 @@ export default class CardsContainer extends Component {
             everything I can about computer science and the various technologies at my disposal, like ES6 and React.`}
 					</p>
 
-					<p>You can download my resume <a href="https://github.com/danielsmith4483/resume/raw/master/resume.pdf" target="_blank" rel="noopener noreferrer">here</a>.</p>
+					<p>You can download my resume <a href="https://github.com/danielsmith4483/resume/raw/master/Daniel_Smith_Resume.pdf" target="_blank" rel="noopener noreferrer">here</a>.</p>
 
 					<h2>Strong points:</h2>
 					<ul>
