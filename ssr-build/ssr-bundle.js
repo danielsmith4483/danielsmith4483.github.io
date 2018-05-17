@@ -1557,10 +1557,6 @@ var home_style_default = /*#__PURE__*/__webpack_require__.n(home_style);
 var CardsContainer_style = __webpack_require__("J4fV");
 var CardsContainer_style_default = /*#__PURE__*/__webpack_require__.n(CardsContainer_style);
 
-// EXTERNAL MODULE: ./Containers/CardsContainer/cards.json
-var cards = __webpack_require__("w03J");
-var cards_default = /*#__PURE__*/__webpack_require__.n(cards);
-
 // EXTERNAL MODULE: ./Containers/CardsContainer/projects.json
 var projects = __webpack_require__("KIIH");
 var projects_default = /*#__PURE__*/__webpack_require__.n(projects);
@@ -1687,6 +1683,289 @@ var Project_Project = function (_Component) {
 }(preact_min["Component"]);
 
 
+// CONCATENATED MODULE: ./Containers/CardsContainer/index.js
+
+
+function CardsContainer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function CardsContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function CardsContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+var colorsBright = {
+
+	backgroundStart: '#519AF7',
+	backgroundEnd: '#519AF7',
+	textColor: 'white'
+};
+
+var colorsDark = {
+	backgroundStart: '#ffffff',
+	backgroundEnd: '#ffffff',
+	textColor: 'black'
+};
+
+var CardsContainer__ref = Object(preact_min["h"])(
+	'p',
+	null,
+	'You can download my resume ',
+	Object(preact_min["h"])(
+		'a',
+		{ href: 'https://github.com/danielsmith4483/resume/raw/master/resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
+		'here'
+	),
+	'.'
+);
+
+var _ref2 = Object(preact_min["h"])(
+	'h2',
+	null,
+	'Strong points:'
+);
+
+var _ref3 = Object(preact_min["h"])(
+	'ul',
+	null,
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'C++ (particularly with Qt)'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Objective-C'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'ES6+'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'React'
+	)
+);
+
+var _ref4 = Object(preact_min["h"])(
+	'h2',
+	null,
+	'Other technologies, stacks, languages:'
+);
+
+var _ref5 = Object(preact_min["h"])(
+	'ul',
+	null,
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Python, Ruby, Java, C#'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Docker, various PaaS solutions'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'MySQL'
+	)
+);
+
+var _ref6 = Object(preact_min["h"])(
+	'h2',
+	null,
+	'Naval Research Laboratory'
+);
+
+var _ref7 = Object(preact_min["h"])(
+	'ul',
+	null,
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Developing client applications using Qt C++.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Implementing Java-based microservices to support said applications.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups.'
+	)
+);
+
+var _ref8 = Object(preact_min["h"])(
+	'h2',
+	null,
+	'The University of Southern Mississippi'
+);
+
+var _ref9 = Object(preact_min["h"])(
+	'ul',
+	null,
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Designed and developed a content delivery framework for university department apps using Objective-C.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Implemented networking libraries for background content updates for mobile apps.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Created a content management web app using AngularJS.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Helped manage app testing practices using TestFlight.'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Participated in the delivery of apps to the iTunes App Store.'
+	)
+);
+
+var _ref10 = Object(preact_min["h"])(
+	Card_Card,
+	{ title: 'My education', colors: colorsBright },
+	Object(preact_min["h"])(
+		'h2',
+		null,
+		'The University of Southern Mississippi (May 2013 - Aug. 2016)'
+	),
+	Object(preact_min["h"])(
+		'ul',
+		null,
+		Object(preact_min["h"])(
+			'li',
+			null,
+			Object(preact_min["h"])(
+				'strong',
+				null,
+				'Master of Science'
+			),
+			' in Computer Science'
+		),
+		Object(preact_min["h"])(
+			'li',
+			null,
+			Object(preact_min["h"])(
+				'strong',
+				null,
+				'Bachelor of Science'
+			),
+			' in Computer Science'
+		)
+	),
+	Object(preact_min["h"])(
+		'h2',
+		null,
+		'Jones County Junior College (Aug. 2011 - May 2013)'
+	),
+	Object(preact_min["h"])(
+		'ul',
+		null,
+		Object(preact_min["h"])(
+			'li',
+			null,
+			Object(preact_min["h"])(
+				'strong',
+				null,
+				'Associate of Applied Science'
+			),
+			' in Information System Technology'
+		)
+	)
+);
+
+var _ref11 = Object(preact_min["h"])(
+	Card_Card,
+	{ title: 'Contact', colors: colorsBright },
+	Object(preact_min["h"])(
+		'p',
+		null,
+		'Please contact me by email at daniel@danielsmith.io.'
+	),
+	Object(preact_min["h"])(
+		'p',
+		null,
+		'Alternatively, you can contact me using any of the platforms listed below.'
+	)
+);
+
+var CardsContainer_CardsContainer = function (_Component) {
+	CardsContainer__inherits(CardsContainer, _Component);
+
+	function CardsContainer() {
+		CardsContainer__classCallCheck(this, CardsContainer);
+
+		return CardsContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
+
+	CardsContainer.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			'div',
+			{ className: 'cardsContainer' },
+			Object(preact_min["h"])(
+				Card_Card,
+				{
+					title: 'Hello!',
+					colors: colorsBright
+				},
+				Object(preact_min["h"])(
+					'p',
+					null,
+					'I\'m Daniel, a software engineer with a background in Computer\n            Science. I\'m passionate about delivering a good user experience,\n            optimization, and web development. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React.'
+				),
+				CardsContainer__ref,
+				_ref2,
+				_ref3,
+				_ref4,
+				_ref5
+			),
+			Object(preact_min["h"])(
+				Card_Card,
+				{ title: 'My work', colors: colorsDark, ref: this.workRef },
+				_ref6,
+				_ref7,
+				_ref8,
+				_ref9
+			),
+			_ref10,
+			Object(preact_min["h"])(
+				Card_Card,
+				{ title: 'My projects', colors: colorsDark },
+				projects_default.a.map(function (p) {
+					return Object(preact_min["h"])(Project_Project, { projectData: p });
+				})
+			),
+			_ref11
+		);
+	};
+
+	return CardsContainer;
+}(preact_min["Component"]);
+
+
 // EXTERNAL MODULE: ./Containers/LinksContainer/style.css
 var LinksContainer_style = __webpack_require__("hMec");
 var LinksContainer_style_default = /*#__PURE__*/__webpack_require__.n(LinksContainer_style);
@@ -1772,279 +2051,6 @@ var LinksContainer_LinksContainer = function (_Component) {
   };
 
   return LinksContainer;
-}(preact_min["Component"]);
-
-
-// CONCATENATED MODULE: ./Containers/CardsContainer/index.js
-
-
-function CardsContainer__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function CardsContainer__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function CardsContainer__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-
-
-
-
-
-
-
-var colorsBright = {
-
-  backgroundStart: "#519AF7",
-  backgroundEnd: "#519AF7",
-  textColor: "white"
-};
-
-var colorsDark = {
-  backgroundStart: "#ffffff",
-  backgroundEnd: "#ffffff",
-  textColor: "black"
-};
-
-var CardsContainer__ref = Object(preact_min["h"])(
-  "h2",
-  null,
-  "Strong points:"
-);
-
-var _ref2 = Object(preact_min["h"])(
-  "ul",
-  null,
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "C++ (particularly with Qt)"
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Objective-C"
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "ES6+"
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "React"
-  )
-);
-
-var _ref3 = Object(preact_min["h"])(
-  "h2",
-  null,
-  "Other technologies, stacks, languages:"
-);
-
-var _ref4 = Object(preact_min["h"])(
-  "ul",
-  null,
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Python, Ruby, Java, C#"
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Docker, various PaaS solutions"
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "MySQL"
-  )
-);
-
-var _ref5 = Object(preact_min["h"])(
-  "h2",
-  null,
-  "Naval Research Laboratory"
-);
-
-var _ref6 = Object(preact_min["h"])(
-  "ul",
-  null,
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Developing client applications using Qt C++."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Implementing Java-based microservices to support said applications."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups."
-  )
-);
-
-var _ref7 = Object(preact_min["h"])(
-  "h2",
-  null,
-  "The University of Southern Mississippi"
-);
-
-var _ref8 = Object(preact_min["h"])(
-  "ul",
-  null,
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Designed and developed a content delivery framework for university department apps using Objective-C."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Implemented networking libraries for background content updates for mobile apps."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Created a content management web app using AngularJS."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Helped manage app testing practices using TestFlight."
-  ),
-  Object(preact_min["h"])(
-    "li",
-    null,
-    "Participated in the delivery of apps to the iTunes App Store."
-  )
-);
-
-var _ref9 = Object(preact_min["h"])(
-  Card_Card,
-  { title: "My education", colors: colorsBright },
-  Object(preact_min["h"])(
-    "h2",
-    null,
-    "The University of Southern Mississippi (May 2013 - Aug. 2016)"
-  ),
-  Object(preact_min["h"])(
-    "ul",
-    null,
-    Object(preact_min["h"])(
-      "li",
-      null,
-      Object(preact_min["h"])(
-        "strong",
-        null,
-        "Master of Science"
-      ),
-      " in Computer Science"
-    ),
-    Object(preact_min["h"])(
-      "li",
-      null,
-      Object(preact_min["h"])(
-        "strong",
-        null,
-        "Bachelor of Science"
-      ),
-      " in Computer Science"
-    )
-  ),
-  Object(preact_min["h"])(
-    "h2",
-    null,
-    "Jones County Junior College (Aug. 2011 - May 2013)"
-  ),
-  Object(preact_min["h"])(
-    "ul",
-    null,
-    Object(preact_min["h"])(
-      "li",
-      null,
-      Object(preact_min["h"])(
-        "strong",
-        null,
-        "Associate of Applied Science"
-      ),
-      " in Information System Technology"
-    )
-  )
-);
-
-var _ref10 = Object(preact_min["h"])(
-  Card_Card,
-  { title: "Contact", colors: colorsBright },
-  Object(preact_min["h"])(
-    "p",
-    null,
-    "Please contact me by email at daniel@danielsmith.io."
-  ),
-  Object(preact_min["h"])(
-    "p",
-    null,
-    "Alternatively, you can contact me using any of the platforms listed below."
-  )
-);
-
-var CardsContainer_CardsContainer = function (_Component) {
-  CardsContainer__inherits(CardsContainer, _Component);
-
-  function CardsContainer(props) {
-    CardsContainer__classCallCheck(this, CardsContainer);
-
-    return CardsContainer__possibleConstructorReturn(this, _Component.call(this, props));
-  }
-
-  CardsContainer.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "div",
-      { className: "cardsContainer" },
-      Object(preact_min["h"])(
-        Card_Card,
-        {
-          title: "Hello!",
-          colors: colorsBright
-        },
-        Object(preact_min["h"])(
-          "p",
-          null,
-          "I'm Daniel, a software engineer with a background in Computer\n            Science. I'm passionate about delivering a good user experience,\n            optimization, and web development. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React."
-        ),
-        CardsContainer__ref,
-        _ref2,
-        _ref3,
-        _ref4
-      ),
-      Object(preact_min["h"])(
-        Card_Card,
-        { title: "My work", colors: colorsDark, ref: this.workRef },
-        _ref5,
-        _ref6,
-        _ref7,
-        _ref8
-      ),
-      _ref9,
-      Object(preact_min["h"])(
-        Card_Card,
-        { title: "My projects", colors: colorsDark },
-        projects_default.a.map(function (p) {
-          return Object(preact_min["h"])(Project_Project, { projectData: p });
-        })
-      ),
-      _ref10
-    );
-  };
-
-  return CardsContainer;
 }(preact_min["Component"]);
 
 
@@ -2760,13 +2766,6 @@ Match.Link = Link;
 
 // removed by extract-text-webpack-plugin
 module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
-
-/***/ }),
-
-/***/ "w03J":
-/***/ (function(module, exports) {
-
-module.exports = [{"title":"Contact","contents":"","colors":{"backgroundStart":"#F9FEA5","backgroundEnd":"#20E2D7","textColor":"black"}}]
 
 /***/ }),
 
