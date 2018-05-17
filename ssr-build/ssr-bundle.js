@@ -1719,7 +1719,7 @@ var CardsContainer__ref = Object(preact_min["h"])(
 	'You can download my resume ',
 	Object(preact_min["h"])(
 		'a',
-		{ href: 'https://github.com/danielsmith4483/resume/raw/master/resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
+		{ href: 'https://github.com/danielsmith4483/resume/raw/master/Daniel_Smith_Resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
 		'here'
 	),
 	'.'
