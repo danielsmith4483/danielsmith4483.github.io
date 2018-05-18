@@ -451,13 +451,6 @@ Router.Link = Link;
 
 /***/ }),
 
-/***/ "B85+":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "FJnM":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2054,45 +2047,6 @@ var LinksContainer_LinksContainer = function (_Component) {
 }(preact_min["Component"]);
 
 
-// EXTERNAL MODULE: ./Components/HeroImage/style.css
-var HeroImage_style = __webpack_require__("B85+");
-var HeroImage_style_default = /*#__PURE__*/__webpack_require__.n(HeroImage_style);
-
-// CONCATENATED MODULE: ./Components/HeroImage/index.js
-
-
-function HeroImage__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function HeroImage__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function HeroImage__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var HeroImage__ref = Object(preact_min["h"])(
-  "div",
-  { className: "hero" },
-  "test"
-);
-
-var HeroImage = function (_Component) {
-  HeroImage__inherits(HeroImage, _Component);
-
-  function HeroImage() {
-    HeroImage__classCallCheck(this, HeroImage);
-
-    return HeroImage__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
-
-  HeroImage.prototype.render = function render() {
-    return HeroImage__ref;
-  };
-
-  return HeroImage;
-}(preact_min["Component"]);
-
-
 // CONCATENATED MODULE: ./routes/home/index.js
 
 
@@ -2108,36 +2062,34 @@ function home__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 
-
-
 var home__ref = Object(preact_min["h"])(CardsContainer_CardsContainer, null);
 
 var home__ref2 = Object(preact_min["h"])(LinksContainer_LinksContainer, null);
 
 var home_Home = function (_Component) {
-  home__inherits(Home, _Component);
+	home__inherits(Home, _Component);
 
-  function Home() {
-    home__classCallCheck(this, Home);
+	function Home() {
+		home__classCallCheck(this, Home);
 
-    return home__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
+		return home__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
 
-  Home.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "div",
-      { "class": home_style_default.a.home },
-      Object(preact_min["h"])("div", { "class": home_style_default.a.parallax }),
-      Object(preact_min["h"])(
-        "div",
-        { "class": home_style_default.a.contents },
-        home__ref
-      ),
-      home__ref2
-    );
-  };
+	Home.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			'div',
+			{ 'class': home_style_default.a.home },
+			Object(preact_min["h"])('div', { 'class': home_style_default.a.parallax }),
+			Object(preact_min["h"])(
+				'div',
+				{ 'class': home_style_default.a.contents },
+				home__ref
+			),
+			home__ref2
+		);
+	};
 
-  return Home;
+	return Home;
 }(preact_min["Component"]);
 
 
@@ -2180,8 +2132,6 @@ var app_App = function (_Component) {
 		}
 
 		return _ret = (_temp = (_this = app__possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.handleRoute = function (e) {
-			console.log(e);
-
 			_this.currentUrl = e.url;
 		}, _temp), app__possibleConstructorReturn(_this, _ret);
 	}
@@ -2198,7 +2148,7 @@ var app_App = function (_Component) {
 			{ id: 'app' },
 			Object(preact_min["h"])(Helmet_default.a, {
 				title: 'Daniel Smith',
-				meta: [{ name: 'description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' }, { property: 'og:type', content: 'article' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }]
+				meta: [{ name: 'description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' }, { property: 'og:type', content: 'article' }, { property: 'og:site_name', content: 'danielsmith.io' }, { property: 'og:description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' }, { property: 'og:image', content: 'https://image.ibb.co/kEkOnH/pic_png.png' }, { property: 'og:url', content: 'https://danielsmith.io' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }]
 			}),
 			app__ref,
 			Object(preact_min["h"])(
