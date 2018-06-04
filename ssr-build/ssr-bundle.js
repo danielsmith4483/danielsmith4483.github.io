@@ -1715,6 +1715,12 @@ var CardsContainer__ref = Object(preact_min["h"])(
 		{ href: 'https://github.com/danielsmith4483/resume/raw/master/Daniel_Smith_Resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
 		'here'
 	),
+	'. and see my Linkedin profile ',
+	Object(preact_min["h"])(
+		'a',
+		{ href: 'https://www.linkedin.com/in/danielsmith4483/', target: '_blank', rel: 'noopener noreferrer' },
+		'here'
+	),
 	'.'
 );
 
