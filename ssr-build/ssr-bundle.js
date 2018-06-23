@@ -1784,7 +1784,7 @@ var _ref9 = Object(preact_min["h"])(
 
 var _ref10 = Object(preact_min["h"])(
 	Card_Card,
-	{ title: 'My education', colors: colorsBright },
+	{ title: 'My Education', colors: colorsBright },
 	Object(preact_min["h"])(
 		'h2',
 		null,
@@ -1877,7 +1877,7 @@ var CardsContainer_CardsContainer = function (_Component) {
 			),
 			Object(preact_min["h"])(
 				Card_Card,
-				{ title: 'My work', colors: colorsDark, ref: this.workRef },
+				{ title: 'My Work', colors: colorsDark, ref: this.workRef },
 				_ref6,
 				_ref7,
 				_ref8,
@@ -1886,7 +1886,7 @@ var CardsContainer_CardsContainer = function (_Component) {
 			_ref10,
 			Object(preact_min["h"])(
 				Card_Card,
-				{ title: 'My projects', colors: colorsDark },
+				{ title: 'My Projects', colors: colorsDark },
 				projects_default.a.map(function (p) {
 					return Object(preact_min["h"])(Project_Project, { projectData: p });
 				})
