@@ -1842,11 +1842,6 @@ var _ref11 = Object(preact_min["h"])(
 		'p',
 		null,
 		'Please contact me by email at daniel@danielsmith.io.'
-	),
-	Object(preact_min["h"])(
-		'p',
-		null,
-		'Alternatively, you can contact me using any of the platforms listed below.'
 	)
 );
 
@@ -1929,27 +1924,34 @@ function SocialLink__inherits(subClass, superClass) { if (typeof superClass !== 
 
 
 var SocialLink_SocialLink = function (_Component) {
-  SocialLink__inherits(SocialLink, _Component);
+	SocialLink__inherits(SocialLink, _Component);
 
-  function SocialLink() {
-    SocialLink__classCallCheck(this, SocialLink);
+	function SocialLink() {
+		SocialLink__classCallCheck(this, SocialLink);
 
-    return SocialLink__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
+		return SocialLink__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
 
-  SocialLink.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "span",
-      { className: "socialLink" },
-      Object(preact_min["h"])(
-        "a",
-        { href: this.props.url, target: "_blank" },
-        this.props.title
-      )
-    );
-  };
+	SocialLink.prototype.render = function render() {
+		var imgStyle = {};
+		return Object(preact_min["h"])(
+			'span',
+			{ className: 'socialLink' },
+			Object(preact_min["h"])(
+				'a',
+				{ href: this.props.url, target: '_blank' },
+				Object(preact_min["h"])('img', { src: this.props.thumbnail, style: imgStyle }),
+				' ',
+				Object(preact_min["h"])(
+					'span',
+					null,
+					this.props.title
+				)
+			)
+		);
+	};
 
-  return SocialLink;
+	return SocialLink;
 }(preact_min["Component"]);
 
 
@@ -1970,25 +1972,25 @@ function LinksContainer__inherits(subClass, superClass) { if (typeof superClass 
 
 
 var LinksContainer_LinksContainer = function (_Component) {
-  LinksContainer__inherits(LinksContainer, _Component);
+	LinksContainer__inherits(LinksContainer, _Component);
 
-  function LinksContainer() {
-    LinksContainer__classCallCheck(this, LinksContainer);
+	function LinksContainer() {
+		LinksContainer__classCallCheck(this, LinksContainer);
 
-    return LinksContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
+		return LinksContainer__possibleConstructorReturn(this, _Component.apply(this, arguments));
+	}
 
-  LinksContainer.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "div",
-      { className: "linksContainer" },
-      links_default.a.map(function (l) {
-        return Object(preact_min["h"])(SocialLink_SocialLink, { url: l.url, title: l.title });
-      })
-    );
-  };
+	LinksContainer.prototype.render = function render() {
+		return Object(preact_min["h"])(
+			'div',
+			{ className: 'linksContainer' },
+			links_default.a.map(function (l) {
+				return Object(preact_min["h"])(SocialLink_SocialLink, { url: l.url, title: l.title, thumbnail: l.thumbnail });
+			})
+		);
+	};
 
-  return LinksContainer;
+	return LinksContainer;
 }(preact_min["Component"]);
 
 
@@ -2007,9 +2009,9 @@ function home__inherits(subClass, superClass) { if (typeof superClass !== "funct
 
 
 
-var home__ref = Object(preact_min["h"])(CardsContainer_CardsContainer, null);
+var home__ref = Object(preact_min["h"])(LinksContainer_LinksContainer, null);
 
-var home__ref2 = Object(preact_min["h"])(LinksContainer_LinksContainer, null);
+var home__ref2 = Object(preact_min["h"])(CardsContainer_CardsContainer, null);
 
 var home_Home = function (_Component) {
 	home__inherits(Home, _Component);
@@ -2028,9 +2030,9 @@ var home_Home = function (_Component) {
 			Object(preact_min["h"])(
 				'div',
 				{ 'class': home_style_default.a.contents },
-				home__ref
-			),
-			home__ref2
+				home__ref,
+				home__ref2
+			)
 		);
 	};
 
@@ -2415,7 +2417,7 @@ module.exports = {"home":"home__2Q5nZ","parallax":"parallax__3THOL","contents":"
 /***/ "bmMN":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Github","url":"https://github.com/danielsmith4483"},{"title":"Linkedin","url":"https://www.linkedin.com/in/danielsmith4483/"},{"title":"Instagram","url":"https://www.instagram.com/danielsmith4483/"},{"title":"Twitter","url":"https://twitter.com/danielsmith4483"}]
+module.exports = [{"title":"Github","url":"https://github.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/github.svg","color":"#181717"},{"title":"Linkedin","url":"https://www.linkedin.com/in/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/linkedin.svg"},{"title":"HackerRank","url":"https://www.hackerrank.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/hackerrank.svg"},{"title":"Instagram","url":"https://www.instagram.com/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/instagram.svg"},{"title":"npmjs","url":"https://www.npmjs.com/~danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/npm.svg"}]
 
 /***/ }),
 
