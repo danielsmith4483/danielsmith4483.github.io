@@ -5,7 +5,20 @@
 }
 
 .project a {
-  color: black;
+  background-color: #519AF7;
+  color: white;
+  padding: 8px 25px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.project a:hover {
+  background-color: #1275f4;
 }
 
 .project h1,
