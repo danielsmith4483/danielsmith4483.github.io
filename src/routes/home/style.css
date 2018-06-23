@@ -14,8 +14,8 @@
 }
 
 .parallax {
-      height: 40vh;
-      background: url("https://image.ibb.co/kEkOnH/pic_png.png"),
+      height: 57vh;
+      background: url("https://storage.googleapis.com/danielsmith/photo.png"),
         linear-gradient(to bottom,
         rgba(255,255,255,0.15) 0%,
         rgba(0,0,0,0.15) 100%),
@@ -24,7 +24,7 @@
  background-blend-mode: normal,normal;
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center top;
+      background-position: center 25px;
       vertical-align: top;
       -webkit-transform-origin: center top;
               transform-origin: center top;
@@ -32,6 +32,12 @@
               transform: translateZ(-1px) scale(2);
               margin-left: -5px;
 }
+
+@media (max-width: 520px) {
+        .parallax {
+                background-size: cover
+        }
+      }
 
 .contents {
   -webkit-transform: translateZ(0);

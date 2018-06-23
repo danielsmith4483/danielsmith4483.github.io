@@ -15,10 +15,6 @@
   margin-left: 100px;
 }
 
-.project p {
-  margin-right: 100px;
-}
-
 @media (max-width: 680px) {
   .project {
     padding: 0px;
@@ -32,6 +28,6 @@
   }
 
   .project p {
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 }
