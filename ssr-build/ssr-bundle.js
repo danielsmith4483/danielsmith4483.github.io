@@ -1643,11 +1643,11 @@ var colorsDark = {
 var _ref = Object(preact_min["h"])(
 	'p',
 	null,
-	'You can download my resume ',
+	'You can check out my resume at ',
 	Object(preact_min["h"])(
 		'a',
-		{ href: 'https://github.com/danielsmith4483/resume/raw/master/Daniel_Smith_Resume.pdf', target: '_blank', rel: 'noopener noreferrer' },
-		'here'
+		{ href: 'https://resume.danielsmith.io/', target: '_blank', rel: 'noopener noreferrer' },
+		'resume.danielsmith.io'
 	),
 	'. and see my Linkedin profile ',
 	Object(preact_min["h"])(
