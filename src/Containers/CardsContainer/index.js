@@ -28,7 +28,7 @@ export default class CardsContainer extends Component {
 					colors={colorsBright}
 				>
 					<p>
-						{`I'm Daniel, a software engineer with a background in Computer
+						{`I'm Daniel Smith, a software engineer with a background in Computer
             Science. I'm passionate about delivering a good user experience,
             optimization, and web development. I currently work at the Stennis
             Space Center for the Naval Research Laboratory. I love learning

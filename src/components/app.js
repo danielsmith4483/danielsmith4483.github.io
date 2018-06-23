@@ -2,7 +2,6 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 import Helmet from 'preact-helmet';
 
-import Header from './header';
 import Home from '../routes/home';
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
@@ -37,7 +36,6 @@ export default class App extends Component {
 						{ name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }
 					]}
 				/>
-				<Header />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
 				</Router>
