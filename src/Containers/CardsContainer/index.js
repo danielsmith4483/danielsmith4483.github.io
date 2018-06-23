@@ -53,7 +53,7 @@ export default class CardsContainer extends Component {
 
 					</ul>
 				</Card>
-				<Card title="My work" colors={colorsDark} ref={this.workRef}>
+				<Card title="My Work" colors={colorsDark} ref={this.workRef}>
 					<h2>Naval Research Laboratory</h2>
 					<ul>
 						<li>Frontend C++ development with Qt</li>
@@ -77,7 +77,7 @@ export default class CardsContainer extends Component {
 					</ul>
 				</Card>
 
-				<Card title="My education" colors={colorsBright}>
+				<Card title="My Education" colors={colorsBright}>
 					<h2>The University of Southern Mississippi (May 2013 - Aug. 2016)</h2>
 					<ul>
 						<li><strong>Master of Science</strong> in Computer Science</li>
@@ -90,7 +90,7 @@ export default class CardsContainer extends Component {
 					</ul>
 				</Card>
 
-				<Card title="My projects" colors={colorsDark}>
+				<Card title="My Projects" colors={colorsDark}>
 					{projectData.map(p => <Project projectData={p} />)}
 				</Card>
 

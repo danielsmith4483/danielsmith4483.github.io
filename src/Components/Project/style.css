@@ -27,7 +27,11 @@
     margin-left: 0px;
   }
 
+  .project h2 {
+    font-size: 1.25em;
+  }
+
   .project p {
-    font-size: 0.8em;
+    font-size: 0.75em;
   }
 }
