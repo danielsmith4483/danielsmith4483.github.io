@@ -66,391 +66,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "/QC5":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "subscribers", function() { return subscribers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCurrentUrl", function() { return getCurrentUrl; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "route", function() { return route; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Router", function() { return Router; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Route", function() { return Route; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Link", function() { return Link; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-
-
-var EMPTY$1 = {};
-
-function assign(obj, props) {
-	// eslint-disable-next-line guard-for-in
-	for (var i in props) {
-		obj[i] = props[i];
-	}
-	return obj;
-}
-
-function exec(url, route, opts) {
-	var reg = /(?:\?([^#]*))?(#.*)?$/,
-	    c = url.match(reg),
-	    matches = {},
-	    ret;
-	if (c && c[1]) {
-		var p = c[1].split('&');
-		for (var i = 0; i < p.length; i++) {
-			var r = p[i].split('=');
-			matches[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('='));
-		}
-	}
-	url = segmentize(url.replace(reg, ''));
-	route = segmentize(route || '');
-	var max = Math.max(url.length, route.length);
-	for (var i$1 = 0; i$1 < max; i$1++) {
-		if (route[i$1] && route[i$1].charAt(0) === ':') {
-			var param = route[i$1].replace(/(^\:|[+*?]+$)/g, ''),
-			    flags = (route[i$1].match(/[+*?]+$/) || EMPTY$1)[0] || '',
-			    plus = ~flags.indexOf('+'),
-			    star = ~flags.indexOf('*'),
-			    val = url[i$1] || '';
-			if (!val && !star && (flags.indexOf('?') < 0 || plus)) {
-				ret = false;
-				break;
-			}
-			matches[param] = decodeURIComponent(val);
-			if (plus || star) {
-				matches[param] = url.slice(i$1).map(decodeURIComponent).join('/');
-				break;
-			}
-		} else if (route[i$1] !== url[i$1]) {
-			ret = false;
-			break;
-		}
-	}
-	if (opts.default !== true && ret === false) {
-		return false;
-	}
-	return matches;
-}
-
-function pathRankSort(a, b) {
-	return a.rank < b.rank ? 1 : a.rank > b.rank ? -1 : a.index - b.index;
-}
-
-// filter out VNodes without attributes (which are unrankeable), and add `index`/`rank` properties to be used in sorting.
-function prepareVNodeForRanking(vnode, index) {
-	vnode.index = index;
-	vnode.rank = rankChild(vnode);
-	return vnode.attributes;
-}
-
-function segmentize(url) {
-	return url.replace(/(^\/+|\/+$)/g, '').split('/');
-}
-
-function rankSegment(segment) {
-	return segment.charAt(0) == ':' ? 1 + '*+?'.indexOf(segment.charAt(segment.length - 1)) || 4 : 5;
-}
-
-function rank(path) {
-	return segmentize(path).map(rankSegment).join('');
-}
-
-function rankChild(vnode) {
-	return vnode.attributes.default ? 0 : rank(vnode.attributes.path);
-}
-
-var customHistory = null;
-
-var ROUTERS = [];
-
-var subscribers = [];
-
-var EMPTY = {};
-
-function isPreactElement(node) {
-	return node.__preactattr_ != null || typeof Symbol !== 'undefined' && node[Symbol.for('preactattr')] != null;
-}
-
-function setUrl(url, type) {
-	if (type === void 0) type = 'push';
-
-	if (customHistory && customHistory[type]) {
-		customHistory[type](url);
-	} else if (typeof history !== 'undefined' && history[type + 'State']) {
-		history[type + 'State'](null, null, url);
-	}
-}
-
-function getCurrentUrl() {
-	var url;
-	if (customHistory && customHistory.location) {
-		url = customHistory.location;
-	} else if (customHistory && customHistory.getCurrentLocation) {
-		url = customHistory.getCurrentLocation();
-	} else {
-		url = typeof location !== 'undefined' ? location : EMPTY;
-	}
-	return "" + (url.pathname || '') + (url.search || '');
-}
-
-function route(url, replace) {
-	if (replace === void 0) replace = false;
-
-	if (typeof url !== 'string' && url.url) {
-		replace = url.replace;
-		url = url.url;
-	}
-
-	// only push URL into history if we can handle it
-	if (canRoute(url)) {
-		setUrl(url, replace ? 'replace' : 'push');
-	}
-
-	return routeTo(url);
-}
-
-/** Check if the given URL can be handled by any router instances. */
-function canRoute(url) {
-	for (var i = ROUTERS.length; i--;) {
-		if (ROUTERS[i].canRoute(url)) {
-			return true;
-		}
-	}
-	return false;
-}
-
-/** Tell all router instances to handle the given URL.  */
-function routeTo(url) {
-	var didRoute = false;
-	for (var i = 0; i < ROUTERS.length; i++) {
-		if (ROUTERS[i].routeTo(url) === true) {
-			didRoute = true;
-		}
-	}
-	for (var i$1 = subscribers.length; i$1--;) {
-		subscribers[i$1](url);
-	}
-	return didRoute;
-}
-
-function routeFromLink(node) {
-	// only valid elements
-	if (!node || !node.getAttribute) {
-		return;
-	}
-
-	var href = node.getAttribute('href'),
-	    target = node.getAttribute('target');
-
-	// ignore links with targets and non-path URLs
-	if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) {
-		return;
-	}
-
-	// attempt to route, if no match simply cede control to browser
-	return route(href);
-}
-
-function handleLinkClick(e) {
-	if (e.button == 0) {
-		routeFromLink(e.currentTarget || e.target || this);
-		return prevent(e);
-	}
-}
-
-function prevent(e) {
-	if (e) {
-		if (e.stopImmediatePropagation) {
-			e.stopImmediatePropagation();
-		}
-		if (e.stopPropagation) {
-			e.stopPropagation();
-		}
-		e.preventDefault();
-	}
-	return false;
-}
-
-function delegateLinkHandler(e) {
-	// ignore events the browser takes care of already:
-	if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button !== 0) {
-		return;
-	}
-
-	var t = e.target;
-	do {
-		if (String(t.nodeName).toUpperCase() === 'A' && t.getAttribute('href') && isPreactElement(t)) {
-			if (t.hasAttribute('native')) {
-				return;
-			}
-			// if link is handled by the router, prevent browser defaults
-			if (routeFromLink(t)) {
-				return prevent(e);
-			}
-		}
-	} while (t = t.parentNode);
-}
-
-var eventListenersInitialized = false;
-
-function initEventListeners() {
-	if (eventListenersInitialized) {
-		return;
-	}
-
-	if (typeof addEventListener === 'function') {
-		if (!customHistory) {
-			addEventListener('popstate', function () {
-				routeTo(getCurrentUrl());
-			});
-		}
-		addEventListener('click', delegateLinkHandler);
-	}
-	eventListenersInitialized = true;
-}
-
-var Router = function (Component$$1) {
-	function Router(props) {
-		Component$$1.call(this, props);
-		if (props.history) {
-			customHistory = props.history;
-		}
-
-		this.state = {
-			url: props.url || getCurrentUrl()
-		};
-
-		initEventListeners();
-	}
-
-	if (Component$$1) Router.__proto__ = Component$$1;
-	Router.prototype = Object.create(Component$$1 && Component$$1.prototype);
-	Router.prototype.constructor = Router;
-
-	Router.prototype.shouldComponentUpdate = function shouldComponentUpdate(props) {
-		if (props.static !== true) {
-			return true;
-		}
-		return props.url !== this.props.url || props.onChange !== this.props.onChange;
-	};
-
-	/** Check if the given URL can be matched against any children */
-	Router.prototype.canRoute = function canRoute(url) {
-		return this.getMatchingChildren(this.props.children, url, false).length > 0;
-	};
-
-	/** Re-render children with a new URL to match against. */
-	Router.prototype.routeTo = function routeTo(url) {
-		this._didRoute = false;
-		this.setState({ url: url });
-
-		// if we're in the middle of an update, don't synchronously re-route.
-		if (this.updating) {
-			return this.canRoute(url);
-		}
-
-		this.forceUpdate();
-		return this._didRoute;
-	};
-
-	Router.prototype.componentWillMount = function componentWillMount() {
-		ROUTERS.push(this);
-		this.updating = true;
-	};
-
-	Router.prototype.componentDidMount = function componentDidMount() {
-		var this$1 = this;
-
-		if (customHistory) {
-			this.unlisten = customHistory.listen(function (location) {
-				this$1.routeTo("" + (location.pathname || '') + (location.search || ''));
-			});
-		}
-		this.updating = false;
-	};
-
-	Router.prototype.componentWillUnmount = function componentWillUnmount() {
-		if (typeof this.unlisten === 'function') {
-			this.unlisten();
-		}
-		ROUTERS.splice(ROUTERS.indexOf(this), 1);
-	};
-
-	Router.prototype.componentWillUpdate = function componentWillUpdate() {
-		this.updating = true;
-	};
-
-	Router.prototype.componentDidUpdate = function componentDidUpdate() {
-		this.updating = false;
-	};
-
-	Router.prototype.getMatchingChildren = function getMatchingChildren(children, url, invoke) {
-		return children.filter(prepareVNodeForRanking).sort(pathRankSort).map(function (vnode) {
-			var matches = exec(url, vnode.attributes.path, vnode.attributes);
-			if (matches) {
-				if (invoke !== false) {
-					var newProps = { url: url, matches: matches };
-					assign(newProps, matches);
-					delete newProps.ref;
-					delete newProps.key;
-					return Object(__WEBPACK_IMPORTED_MODULE_0_preact__["cloneElement"])(vnode, newProps);
-				}
-				return vnode;
-			}
-		}).filter(Boolean);
-	};
-
-	Router.prototype.render = function render(ref, ref$1) {
-		var children = ref.children;
-		var onChange = ref.onChange;
-		var url = ref$1.url;
-
-		var active = this.getMatchingChildren(children, url, true);
-
-		var current = active[0] || null;
-		this._didRoute = !!current;
-
-		var previous = this.previousUrl;
-		if (url !== previous) {
-			this.previousUrl = url;
-			if (typeof onChange === 'function') {
-				onChange({
-					router: this,
-					url: url,
-					previous: previous,
-					active: active,
-					current: current
-				});
-			}
-		}
-
-		return current;
-	};
-
-	return Router;
-}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
-
-var Link = function Link(props) {
-	return Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('a', assign({ onClick: handleLinkClick }, props));
-};
-
-var Route = function Route(props) {
-	return Object(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(props.component, props);
-};
-
-Router.subscribers = subscribers;
-Router.getCurrentUrl = getCurrentUrl;
-Router.route = route;
-Router.Router = Router;
-Router.Route = Route;
-Router.Link = Link;
-
-/* harmony default export */ __webpack_exports__["default"] = (Router);
-//# sourceMappingURL=preact-router.es.js.map
-
-/***/ }),
-
 /***/ "FJnM":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1487,60 +1102,379 @@ var style_default = /*#__PURE__*/__webpack_require__.n(style_0);
 var preact_min = __webpack_require__("KM04");
 var preact_min_default = /*#__PURE__*/__webpack_require__.n(preact_min);
 
-// EXTERNAL MODULE: ../node_modules/preact-router/dist/preact-router.es.js
-var preact_router_es = __webpack_require__("/QC5");
+// CONCATENATED MODULE: ../node_modules/preact-router/dist/preact-router.es.js
 
+
+var EMPTY$1 = {};
+
+function preact_router_es_assign(obj, props) {
+	// eslint-disable-next-line guard-for-in
+	for (var i in props) {
+		obj[i] = props[i];
+	}
+	return obj;
+}
+
+function exec(url, route, opts) {
+	var reg = /(?:\?([^#]*))?(#.*)?$/,
+	    c = url.match(reg),
+	    matches = {},
+	    ret;
+	if (c && c[1]) {
+		var p = c[1].split('&');
+		for (var i = 0; i < p.length; i++) {
+			var r = p[i].split('=');
+			matches[decodeURIComponent(r[0])] = decodeURIComponent(r.slice(1).join('='));
+		}
+	}
+	url = segmentize(url.replace(reg, ''));
+	route = segmentize(route || '');
+	var max = Math.max(url.length, route.length);
+	for (var i$1 = 0; i$1 < max; i$1++) {
+		if (route[i$1] && route[i$1].charAt(0) === ':') {
+			var param = route[i$1].replace(/(^\:|[+*?]+$)/g, ''),
+			    flags = (route[i$1].match(/[+*?]+$/) || EMPTY$1)[0] || '',
+			    plus = ~flags.indexOf('+'),
+			    star = ~flags.indexOf('*'),
+			    val = url[i$1] || '';
+			if (!val && !star && (flags.indexOf('?') < 0 || plus)) {
+				ret = false;
+				break;
+			}
+			matches[param] = decodeURIComponent(val);
+			if (plus || star) {
+				matches[param] = url.slice(i$1).map(decodeURIComponent).join('/');
+				break;
+			}
+		} else if (route[i$1] !== url[i$1]) {
+			ret = false;
+			break;
+		}
+	}
+	if (opts.default !== true && ret === false) {
+		return false;
+	}
+	return matches;
+}
+
+function pathRankSort(a, b) {
+	return a.rank < b.rank ? 1 : a.rank > b.rank ? -1 : a.index - b.index;
+}
+
+// filter out VNodes without attributes (which are unrankeable), and add `index`/`rank` properties to be used in sorting.
+function prepareVNodeForRanking(vnode, index) {
+	vnode.index = index;
+	vnode.rank = rankChild(vnode);
+	return vnode.attributes;
+}
+
+function segmentize(url) {
+	return url.replace(/(^\/+|\/+$)/g, '').split('/');
+}
+
+function rankSegment(segment) {
+	return segment.charAt(0) == ':' ? 1 + '*+?'.indexOf(segment.charAt(segment.length - 1)) || 4 : 5;
+}
+
+function rank(path) {
+	return segmentize(path).map(rankSegment).join('');
+}
+
+function rankChild(vnode) {
+	return vnode.attributes.default ? 0 : rank(vnode.attributes.path);
+}
+
+var customHistory = null;
+
+var ROUTERS = [];
+
+var subscribers = [];
+
+var EMPTY = {};
+
+function isPreactElement(node) {
+	return node.__preactattr_ != null || typeof Symbol !== 'undefined' && node[Symbol.for('preactattr')] != null;
+}
+
+function setUrl(url, type) {
+	if (type === void 0) type = 'push';
+
+	if (customHistory && customHistory[type]) {
+		customHistory[type](url);
+	} else if (typeof history !== 'undefined' && history[type + 'State']) {
+		history[type + 'State'](null, null, url);
+	}
+}
+
+function getCurrentUrl() {
+	var url;
+	if (customHistory && customHistory.location) {
+		url = customHistory.location;
+	} else if (customHistory && customHistory.getCurrentLocation) {
+		url = customHistory.getCurrentLocation();
+	} else {
+		url = typeof location !== 'undefined' ? location : EMPTY;
+	}
+	return "" + (url.pathname || '') + (url.search || '');
+}
+
+function route(url, replace) {
+	if (replace === void 0) replace = false;
+
+	if (typeof url !== 'string' && url.url) {
+		replace = url.replace;
+		url = url.url;
+	}
+
+	// only push URL into history if we can handle it
+	if (canRoute(url)) {
+		setUrl(url, replace ? 'replace' : 'push');
+	}
+
+	return routeTo(url);
+}
+
+/** Check if the given URL can be handled by any router instances. */
+function canRoute(url) {
+	for (var i = ROUTERS.length; i--;) {
+		if (ROUTERS[i].canRoute(url)) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/** Tell all router instances to handle the given URL.  */
+function routeTo(url) {
+	var didRoute = false;
+	for (var i = 0; i < ROUTERS.length; i++) {
+		if (ROUTERS[i].routeTo(url) === true) {
+			didRoute = true;
+		}
+	}
+	for (var i$1 = subscribers.length; i$1--;) {
+		subscribers[i$1](url);
+	}
+	return didRoute;
+}
+
+function routeFromLink(node) {
+	// only valid elements
+	if (!node || !node.getAttribute) {
+		return;
+	}
+
+	var href = node.getAttribute('href'),
+	    target = node.getAttribute('target');
+
+	// ignore links with targets and non-path URLs
+	if (!href || !href.match(/^\//g) || target && !target.match(/^_?self$/i)) {
+		return;
+	}
+
+	// attempt to route, if no match simply cede control to browser
+	return route(href);
+}
+
+function handleLinkClick(e) {
+	if (e.button == 0) {
+		routeFromLink(e.currentTarget || e.target || this);
+		return prevent(e);
+	}
+}
+
+function prevent(e) {
+	if (e) {
+		if (e.stopImmediatePropagation) {
+			e.stopImmediatePropagation();
+		}
+		if (e.stopPropagation) {
+			e.stopPropagation();
+		}
+		e.preventDefault();
+	}
+	return false;
+}
+
+function delegateLinkHandler(e) {
+	// ignore events the browser takes care of already:
+	if (e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || e.button !== 0) {
+		return;
+	}
+
+	var t = e.target;
+	do {
+		if (String(t.nodeName).toUpperCase() === 'A' && t.getAttribute('href') && isPreactElement(t)) {
+			if (t.hasAttribute('native')) {
+				return;
+			}
+			// if link is handled by the router, prevent browser defaults
+			if (routeFromLink(t)) {
+				return prevent(e);
+			}
+		}
+	} while (t = t.parentNode);
+}
+
+var eventListenersInitialized = false;
+
+function initEventListeners() {
+	if (eventListenersInitialized) {
+		return;
+	}
+
+	if (typeof addEventListener === 'function') {
+		if (!customHistory) {
+			addEventListener('popstate', function () {
+				routeTo(getCurrentUrl());
+			});
+		}
+		addEventListener('click', delegateLinkHandler);
+	}
+	eventListenersInitialized = true;
+}
+
+var preact_router_es_Router = function (Component$$1) {
+	function Router(props) {
+		Component$$1.call(this, props);
+		if (props.history) {
+			customHistory = props.history;
+		}
+
+		this.state = {
+			url: props.url || getCurrentUrl()
+		};
+
+		initEventListeners();
+	}
+
+	if (Component$$1) Router.__proto__ = Component$$1;
+	Router.prototype = Object.create(Component$$1 && Component$$1.prototype);
+	Router.prototype.constructor = Router;
+
+	Router.prototype.shouldComponentUpdate = function shouldComponentUpdate(props) {
+		if (props.static !== true) {
+			return true;
+		}
+		return props.url !== this.props.url || props.onChange !== this.props.onChange;
+	};
+
+	/** Check if the given URL can be matched against any children */
+	Router.prototype.canRoute = function canRoute(url) {
+		return this.getMatchingChildren(this.props.children, url, false).length > 0;
+	};
+
+	/** Re-render children with a new URL to match against. */
+	Router.prototype.routeTo = function routeTo(url) {
+		this._didRoute = false;
+		this.setState({ url: url });
+
+		// if we're in the middle of an update, don't synchronously re-route.
+		if (this.updating) {
+			return this.canRoute(url);
+		}
+
+		this.forceUpdate();
+		return this._didRoute;
+	};
+
+	Router.prototype.componentWillMount = function componentWillMount() {
+		ROUTERS.push(this);
+		this.updating = true;
+	};
+
+	Router.prototype.componentDidMount = function componentDidMount() {
+		var this$1 = this;
+
+		if (customHistory) {
+			this.unlisten = customHistory.listen(function (location) {
+				this$1.routeTo("" + (location.pathname || '') + (location.search || ''));
+			});
+		}
+		this.updating = false;
+	};
+
+	Router.prototype.componentWillUnmount = function componentWillUnmount() {
+		if (typeof this.unlisten === 'function') {
+			this.unlisten();
+		}
+		ROUTERS.splice(ROUTERS.indexOf(this), 1);
+	};
+
+	Router.prototype.componentWillUpdate = function componentWillUpdate() {
+		this.updating = true;
+	};
+
+	Router.prototype.componentDidUpdate = function componentDidUpdate() {
+		this.updating = false;
+	};
+
+	Router.prototype.getMatchingChildren = function getMatchingChildren(children, url, invoke) {
+		return children.filter(prepareVNodeForRanking).sort(pathRankSort).map(function (vnode) {
+			var matches = exec(url, vnode.attributes.path, vnode.attributes);
+			if (matches) {
+				if (invoke !== false) {
+					var newProps = { url: url, matches: matches };
+					preact_router_es_assign(newProps, matches);
+					delete newProps.ref;
+					delete newProps.key;
+					return Object(preact_min["cloneElement"])(vnode, newProps);
+				}
+				return vnode;
+			}
+		}).filter(Boolean);
+	};
+
+	Router.prototype.render = function render(ref, ref$1) {
+		var children = ref.children;
+		var onChange = ref.onChange;
+		var url = ref$1.url;
+
+		var active = this.getMatchingChildren(children, url, true);
+
+		var current = active[0] || null;
+		this._didRoute = !!current;
+
+		var previous = this.previousUrl;
+		if (url !== previous) {
+			this.previousUrl = url;
+			if (typeof onChange === 'function') {
+				onChange({
+					router: this,
+					url: url,
+					previous: previous,
+					active: active,
+					current: current
+				});
+			}
+		}
+
+		return current;
+	};
+
+	return Router;
+}(preact_min["Component"]);
+
+var preact_router_es_Link = function Link(props) {
+	return Object(preact_min["h"])('a', preact_router_es_assign({ onClick: handleLinkClick }, props));
+};
+
+var preact_router_es_Route = function Route(props) {
+	return Object(preact_min["h"])(props.component, props);
+};
+
+preact_router_es_Router.subscribers = subscribers;
+preact_router_es_Router.getCurrentUrl = getCurrentUrl;
+preact_router_es_Router.route = route;
+preact_router_es_Router.Router = preact_router_es_Router;
+preact_router_es_Router.Route = preact_router_es_Route;
+preact_router_es_Router.Link = preact_router_es_Link;
+
+/* harmony default export */ var preact_router_es = (preact_router_es_Router);
+//# sourceMappingURL=preact-router.es.js.map
 // EXTERNAL MODULE: ../node_modules/preact-helmet/lib/Helmet.js
 var Helmet = __webpack_require__("FJnM");
 var Helmet_default = /*#__PURE__*/__webpack_require__.n(Helmet);
-
-// EXTERNAL MODULE: ../node_modules/preact-router/match.js
-var match = __webpack_require__("sw5u");
-var match_default = /*#__PURE__*/__webpack_require__.n(match);
-
-// EXTERNAL MODULE: ./components/header/style.css
-var header_style = __webpack_require__("u3et");
-var header_style_default = /*#__PURE__*/__webpack_require__.n(header_style);
-
-// CONCATENATED MODULE: ./components/header/index.js
-
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-var _ref = Object(preact_min["h"])(
-  "h1",
-  null,
-  "Daniel Smith"
-);
-
-var header_Header = function (_Component) {
-  _inherits(Header, _Component);
-
-  function Header() {
-    _classCallCheck(this, Header);
-
-    return _possibleConstructorReturn(this, _Component.apply(this, arguments));
-  }
-
-  Header.prototype.render = function render() {
-    return Object(preact_min["h"])(
-      "header",
-      { "class": header_style_default.a.header },
-      _ref
-    );
-  };
-
-  return Header;
-}(preact_min["Component"]);
-
 
 // EXTERNAL MODULE: ./routes/home/style.css
 var home_style = __webpack_require__("ZAL5");
@@ -1561,22 +1495,22 @@ var Card_style_default = /*#__PURE__*/__webpack_require__.n(Card_style);
 // CONCATENATED MODULE: ./Components/Card/index.js
 
 
-function Card__classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function Card__possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function Card__inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 
 
 
 var Card_Card = function (_Component) {
-  Card__inherits(Card, _Component);
+  _inherits(Card, _Component);
 
   function Card() {
-    Card__classCallCheck(this, Card);
+    _classCallCheck(this, Card);
 
-    return Card__possibleConstructorReturn(this, _Component.apply(this, arguments));
+    return _possibleConstructorReturn(this, _Component.apply(this, arguments));
   }
 
   Card.prototype.render = function render() {
@@ -1706,7 +1640,7 @@ var colorsDark = {
 	textColor: 'black'
 };
 
-var CardsContainer__ref = Object(preact_min["h"])(
+var _ref = Object(preact_min["h"])(
 	'p',
 	null,
 	'You can download my resume ',
@@ -1736,17 +1670,17 @@ var _ref3 = Object(preact_min["h"])(
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'C++ (particularly with Qt)'
+		'C++'
 	),
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Objective-C'
+		'Python'
 	),
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'ES6+'
+		'JavaScript'
 	),
 	Object(preact_min["h"])(
 		'li',
@@ -1767,7 +1701,7 @@ var _ref5 = Object(preact_min["h"])(
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Python, Ruby, Java, C#'
+		'Objective-C, Ruby, Java, C#'
 	),
 	Object(preact_min["h"])(
 		'li',
@@ -1793,17 +1727,17 @@ var _ref7 = Object(preact_min["h"])(
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Developing client applications using Qt C++.'
+		'Frontend C++ development with Qt'
 	),
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Implementing Java-based microservices to support said applications.'
+		'Backend microservices development with Java'
 	),
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups.'
+		'Scripting and tests in Python'
 	)
 );
 
@@ -1819,7 +1753,12 @@ var _ref9 = Object(preact_min["h"])(
 	Object(preact_min["h"])(
 		'li',
 		null,
-		'Designed and developed a content delivery framework for university department apps using Objective-C.'
+		'iOS development with Objective-C'
+	),
+	Object(preact_min["h"])(
+		'li',
+		null,
+		'Extensive work with Core Data, UITableViewControllers, and UISearchBar'
 	),
 	Object(preact_min["h"])(
 		'li',
@@ -1933,9 +1872,9 @@ var CardsContainer_CardsContainer = function (_Component) {
 				Object(preact_min["h"])(
 					'p',
 					null,
-					'I\'m Daniel, a software engineer with a background in Computer\n            Science. I\'m passionate about delivering a good user experience,\n            optimization, and web development. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React.'
+					'I\'m Daniel Smith, a software engineer with a background in Computer\n            Science. I\'m passionate about delivering a good user experience,\n            optimization, and web development. I currently work at the Stennis\n            Space Center for the Naval Research Laboratory. I love learning\n            everything I can about computer science and the various technologies at my disposal, like ES6 and React.'
 				),
-				CardsContainer__ref,
+				_ref,
 				_ref2,
 				_ref3,
 				_ref4,
@@ -2113,7 +2052,6 @@ function app__inherits(subClass, superClass) { if (typeof superClass !== "functi
 
 
 
-
 // import Home from 'async!../routes/home';
 // import Profile from 'async!../routes/profile';
 
@@ -2121,9 +2059,7 @@ if (false) {
 	require('preact/debug');
 }
 
-var app__ref = Object(preact_min["h"])(header_Header, null);
-
-var app__ref2 = Object(preact_min["h"])(home_Home, { path: '/' });
+var app__ref = Object(preact_min["h"])(home_Home, { path: '/' });
 
 var app_App = function (_Component) {
 	app__inherits(App, _Component);
@@ -2156,11 +2092,10 @@ var app_App = function (_Component) {
 				title: 'Daniel Smith',
 				meta: [{ name: 'description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' }, { property: 'og:type', content: 'article' }, { property: 'og:site_name', content: 'danielsmith.io' }, { property: 'og:description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' }, { property: 'og:image', content: 'https://image.ibb.co/kEkOnH/pic_png.png' }, { property: 'og:url', content: 'https://danielsmith.io' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }]
 			}),
-			app__ref,
 			Object(preact_min["h"])(
-				preact_router_es["Router"],
+				preact_router_es_Router,
 				{ onChange: this.handleRoute },
-				app__ref2
+				app__ref
 			)
 		);
 	};
@@ -2607,121 +2542,6 @@ function shim(obj) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "sw5u":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.Link = exports.Match = undefined;
-
-var _extends = Object.assign || function (target) {
-	for (var i = 1; i < arguments.length; i++) {
-		var source = arguments[i];for (var key in source) {
-			if (Object.prototype.hasOwnProperty.call(source, key)) {
-				target[key] = source[key];
-			}
-		}
-	}return target;
-};
-
-var _preact = __webpack_require__("KM04");
-
-var _preactRouter = __webpack_require__("/QC5");
-
-function _objectWithoutProperties(obj, keys) {
-	var target = {};for (var i in obj) {
-		if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-	}return target;
-}
-
-function _classCallCheck(instance, Constructor) {
-	if (!(instance instanceof Constructor)) {
-		throw new TypeError("Cannot call a class as a function");
-	}
-}
-
-function _possibleConstructorReturn(self, call) {
-	if (!self) {
-		throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-	}return call && (typeof call === "object" || typeof call === "function") ? call : self;
-}
-
-function _inherits(subClass, superClass) {
-	if (typeof superClass !== "function" && superClass !== null) {
-		throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-	}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-}
-
-var Match = exports.Match = function (_Component) {
-	_inherits(Match, _Component);
-
-	function Match() {
-		var _temp, _this, _ret;
-
-		_classCallCheck(this, Match);
-
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
-		}
-
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, _Component.call.apply(_Component, [this].concat(args))), _this), _this.update = function (url) {
-			_this.nextUrl = url;
-			_this.setState({});
-		}, _temp), _possibleConstructorReturn(_this, _ret);
-	}
-
-	Match.prototype.componentDidMount = function componentDidMount() {
-		_preactRouter.subscribers.push(this.update);
-	};
-
-	Match.prototype.componentWillUnmount = function componentWillUnmount() {
-		_preactRouter.subscribers.splice(_preactRouter.subscribers.indexOf(this.update) >>> 0, 1);
-	};
-
-	Match.prototype.render = function render(props) {
-		var url = this.nextUrl || (0, _preactRouter.getCurrentUrl)(),
-		    path = url.replace(/\?.+$/, '');
-		this.nextUrl = null;
-		return props.children[0] && props.children[0]({
-			url: url,
-			path: path,
-			matches: path === props.path
-		});
-	};
-
-	return Match;
-}(_preact.Component);
-
-var Link = function Link(_ref) {
-	var activeClassName = _ref.activeClassName,
-	    path = _ref.path,
-	    props = _objectWithoutProperties(_ref, ['activeClassName', 'path']);
-
-	return (0, _preact.h)(Match, { path: path || props.href }, function (_ref2) {
-		var matches = _ref2.matches;
-		return (0, _preact.h)(_preactRouter.Link, _extends({}, props, { 'class': [props.class || props.className, matches && activeClassName].filter(Boolean).join(' ') }));
-	});
-};
-
-exports.Link = Link;
-exports.default = Match;
-
-Match.Link = Link;
-
-/***/ }),
-
-/***/ "u3et":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-module.exports = {"header":"header__2MqSo","active":"active__27Q54"};
 
 /***/ }),
 
