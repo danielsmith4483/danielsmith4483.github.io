@@ -30,7 +30,7 @@ export default class App extends Component {
 						{ property: 'og:type', content: 'article' },
 						{ property: 'og:site_name', content: 'danielsmith.io' },
 						{ property: 'og:description', content: 'I\'m Daniel, a software engineer with a background in Computer Science. I\'m passionate about delivering a good user experience, optimization, and web development.' },
-						{ property: 'og:image', content: 'https://image.ibb.co/kEkOnH/pic_png.png' },
+						{ property: 'og:image', content: 'https://storage.googleapis.com/danielsmith/photo.png' },
 						{ property: 'og:url', content: 'https://danielsmith.io' },
 						{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
 						{ name: 'keywords', content: 'danielsmith4483, Daniel Smith, software engineer, computer scientist' }
