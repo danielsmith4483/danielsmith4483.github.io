@@ -39,15 +39,15 @@ export default class CardsContainer extends Component {
 
 					<h2>Strong points:</h2>
 					<ul>
-						<li>C++ (particularly with Qt)</li>
-						<li>Objective-C</li>
-						<li>ES6+</li>
+						<li>C++</li>
+						<li>Python</li>
+						<li>JavaScript</li>
 						<li>React</li>
 					</ul>
 
 					<h2>Other technologies, stacks, languages:</h2>
 					<ul>
-						<li>Python, Ruby, Java, C#</li>
+						<li>Objective-C, Ruby, Java, C#</li>
 						<li>Docker, various PaaS solutions</li>
 						<li>MySQL</li>
 
@@ -56,17 +56,15 @@ export default class CardsContainer extends Component {
 				<Card title="My work" colors={colorsDark} ref={this.workRef}>
 					<h2>Naval Research Laboratory</h2>
 					<ul>
-						<li>Developing client applications using Qt C++.</li>
-						<li>Implementing Java-based microservices to support said applications.</li>
-						<li>Participating in daily scrum activities including backlog grooming, sprint planning, and daily standups.</li>
+						<li>Frontend C++ development with Qt</li>
+						<li>Backend microservices development with Java</li>
+						<li>Scripting and tests in Python</li>
 					</ul>
 
 					<h2>The University of Southern Mississippi</h2>
 					<ul>
-						<li>
-              Designed and developed a content delivery framework for university
-              department apps using Objective-C.
-						</li>
+						<li>iOS development with Objective-C</li>
+						<li>Extensive work with Core Data, UITableViewControllers, and UISearchBar</li>
 						<li>
               Implemented networking libraries for background content updates
               for mobile apps.
