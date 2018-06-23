@@ -1,4 +1,6 @@
 .linksContainer {
-  margin: 20px;
+  padding: 20px;
+  padding-top: 50px;
   text-align: center;
+  background-color: #519AF7;
 }

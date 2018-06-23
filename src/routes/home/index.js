@@ -10,9 +10,9 @@ export default class Home extends Component {
 			<div class={style.home}>
 				<div class={style.parallax} />
 				<div class={style.contents}>
+					<LinksContainer />
 					<CardsContainer />
 				</div>
-				<LinksContainer />
 			</div>
 		);
 	}

@@ -96,8 +96,6 @@ export default class CardsContainer extends Component {
 
 				<Card title="Contact" colors={colorsBright}>
 					<p>Please contact me by email at daniel@danielsmith.io.</p>
-
-					<p>Alternatively, you can contact me using any of the platforms listed below.</p>
 				</Card>
 			</div>
 		);
