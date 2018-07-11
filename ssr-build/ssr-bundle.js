@@ -2417,7 +2417,7 @@ module.exports = {"home":"home__2Q5nZ","parallax":"parallax__3THOL","contents":"
 /***/ "bmMN":
 /***/ (function(module, exports) {
 
-module.exports = [{"title":"Github","url":"https://github.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/github.svg","color":"#181717"},{"title":"Linkedin","url":"https://www.linkedin.com/in/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/linkedin.svg"},{"title":"HackerRank","url":"https://www.hackerrank.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/hackerrank.svg"},{"title":"Instagram","url":"https://www.instagram.com/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/instagram.svg"},{"title":"npmjs","url":"https://www.npmjs.com/~danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/npm.svg"}]
+module.exports = [{"title":"Github","url":"https://github.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/github.svg","color":"#181717"},{"title":"Linkedin","url":"https://www.linkedin.com/in/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/linkedin.svg"},{"title":"HackerRank","url":"https://www.hackerrank.com/danielsmith4483","thumbnail":"https://storage.googleapis.com/danielsmith/icons/hackerrank.svg"},{"title":"Instagram","url":"https://www.instagram.com/danielsmith4483/","thumbnail":"https://storage.googleapis.com/danielsmith/icons/instagram.svg"},{"title":"StackOverflow","url":"https://stackoverflow.com/users/10027198/daniel-smith?tab=profile","thumbnail":"https://storage.googleapis.com/danielsmith/icons/stackoverflow.svg"}]
 
 /***/ }),
 
